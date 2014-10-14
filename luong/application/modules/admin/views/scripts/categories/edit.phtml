@@ -1,0 +1,124 @@
+<?php $row = $this->row ?>
+<div class="row">
+    <div class="span12">
+        <div class="widget-block">
+            <div class="widget-head">
+                <h5> Form ELements</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    <form class="form-horizontal well white-box" method="post" action="" enctype="multipart/form-data"  class="form_field">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label" for="input501">Name VI</label>
+                                <div class="controls">
+                                    <input type="text" class="span5" name="name_vi" id="name_vi" value="<?php echo $row->name_vi ?>" required="required"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="input501">Name EN</label>
+                                <div class="controls">
+                                    <input type="text" class="span5" name="name_en" id="name_en" value="<?php echo $row->name_en ?>" required="required"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="input501">Name JP</label>
+                                <div class="controls">
+                                    <input type="text" class="span5" name="name_jp" id="name_jp" value="<?php echo $row->name_jp ?>" required="required"/>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group">
+                                <label class="control-label" for="input501">Categories</label>
+                                <div class="controls">
+                                    <select name="parent_id" class="span5">
+                                        <option value="0">Root</option>
+                                        <?php
+                                        if ($rs = $this->rs):
+                                            foreach ($rs AS $item):
+                                                ?>
+                                                <option value="<?php echo $item['id'] ?>" <?php if ($item['id'] == $row->parent_id) echo 'selected="selected"' ?>><?php echo $item['name_vi'] ?></option>            
+                                                <?php
+                                            endforeach;
+                                        endif;
+                                        ?>
+                                    </select>	
+                                </div>
+                            </div>
+
+
+                            <div class="control-group span11">
+                                <label class="control-label">IMG</label>
+                                <div class="controls">
+                                    <input class="banner" id="image" type="file"/>
+                                    <p class="help-block">
+                                        <?php echo Luong_Helper_Constant::HEPL_HOUSE_IMG1 ?>
+                                    </p>
+                                    <div id="show_image"> 
+                                        <input name="image" value="<?php echo $row->image ?>" type="hidden">
+                                        <img alt="" src="<?php echo $row->image ?>">
+                                    </div>	
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">META DESCRIPTION</label>
+                                <div class="controls">
+                                    <textarea class="span9" name="meta_description"><?php echo $row->meta_description ?></textarea>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="input02">Meta keywords</label>
+                                <div class="controls">
+                                    <input id="tags_1" type="text" class="tags" name="meta_keywords" value="<?php echo $row->meta_keywords ?>"/>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <a class="btn" href="<?php echo $this->contextPath; ?>">Cancel</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var forder = '/upload/categories';
+        $('#image').uploadify({
+            'formData': {
+                'folder': forder,
+                'fileext': 'png|gif|jpg|jpeg|bmp|JPG|PNG|GIF|JPEG|BMP',
+                'thumb': '1'
+            },
+            'fileSizeLimit': 10000,
+            'fileTypeExts': '*.png; *.gif; *.jpg; *jpeg; *.bmp;*.JPG;*.GIF;*.JPEG,*.PNG,*.BMP',
+            'swf': '/layouts/admin/js/uploadify/uploadify.swf',
+            'uploader': '/admin/upload/no-thumb',
+            'cancelImg': '/layouts/admin/js/uploadify/uploadify-cancel.png',
+            'multi': false,
+            'onUploadSuccess': function(file, data) {
+                var response_code = data.substring(0, 1);
+                var file_name = data.substring(2);
+                var data = forder + '/' + file_name;
+                if (response_code == 0) {
+                    $("#popup-content").html(file_name);
+                    $("#show-popup").click();
+                } else {
+                    show_image(data);
+                }
+            }
+        });
+    });
+    function show_image(data) {
+        var img = "<input name = 'image' value = '" + data + "' type='hidden'>" + '<img src="' + data + '"/>';
+        $("#show_image").html(img);
+    }
+
+</script>

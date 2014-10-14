@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+        <meta http-equiv="content-language" content="vi">
+        <?php echo $this->headLink() ?>
+        <?php echo $this->headScript() ?>
+        <?php
+        $controller = Zend_Controller_Front::getInstance()->getRequest()->getControllerName();
+        $action = Zend_Controller_Front::getInstance()->getRequest()->getActionName();
+        ?>
+        
+        <!-- <link rel="shortcut icon" href="/layouts/admin/images/icon.png" /> -->
+        <!-- <link rel="icon" href="/layouts/admin/images/icon.png" /> -->
+        <title>Cpanel</title>
+        <link type="text/css" rel="stylesheet" href="/layouts/admin/css/common.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content=""/>
+        <meta name="author" content="Nguyễn Văn Hiến 0985278 393"/>
+        <!-- styles -->
+        <link href="/layouts/admin/srabon/css/bootstrap.css" rel="stylesheet"/>
+        <link href="/layouts/admin/srabon/css/jquery-ui-1.8.16.custom.css" rel="stylesheet"/>
+        <link href="/layouts/admin/srabon/css/jquery.jqplot.css" rel="stylesheet"/>
+        <link href="/layouts/admin/srabon/css/prettify.css" rel="stylesheet"/>
+        <link href="/layouts/admin/srabon/css/elfinder.min.css" rel="stylesheet"/>
+        <link href="/layouts/admin/srabon/css/elfinder.theme.css" rel="stylesheet"/>
+        <link href="/layouts/admin/srabon/css/fullcalendar.css" rel="stylesheet"/>
+        <link href="/layouts/admin/srabon/css/styles.css" rel="stylesheet"/>
+        <link href="/layouts/admin/srabon/css/bootstrap-responsive.css" rel="stylesheet"/>
+        <link href="/layouts/admin/srabon/css/icons-sprite.css" rel="stylesheet"/>
+        <link href="/layouts/admin/srabon/css/theme-light-blue.css" rel="stylesheet" id="themes" />
+
+        <script type="text/javascript" src="/layouts/admin/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/layouts/admin/js/jquery-ui.min1.9.2.js"></script>
+        <!--[if IE 7]>
+        <link rel="stylesheet" type="text/css" href="/layouts/admin/srabon/css/ie/ie7.css" />
+        <![endif]-->
+        <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="/layouts/admin/srabon/css/ie/ie8.css" />
+        <![endif]-->
+        <!--[if IE 9]>
+        <link rel="stylesheet" type="text/css" href="/layouts/admin/srabon/css/ie/ie9.css" />
+        <![endif]-->
+        <!--fav and touch icons -->
+
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner top-nav">
+                <div class="container">
+                    <div class="branding">
+                        <div class="logo"> <a href="/admin/index"><img src="/layouts/admin/srabon/img/logo.png" width="168" height="40" alt="Logo"/></a> </div>
+                    </div>
+                    <ul class="nav pull-right">
+                        <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#">Admin <i class="white-icons admin_user"></i><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin/user"><i class="icon-file"></i> Thông tin tài khoản</a></li>
+                                <li><a href="/admin/user/change-pass"><i class="icon-pencil"></i> Đổi mật khẩu</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/admin/logout.html"><i class="icon-off"></i><strong> Logout</strong></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="nav-icon cog"></i> Settings <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/admin/config">Config Site</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/admin/newscategory">Danh mục</a></li>
+                            <li><a href="/admin/news">Bài viết</a></li>
+                            <li><a href="/admin/tags">Tags</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="main-content">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <?php echo $this->breadcrumb ?>
+                </ul>
+                <?php echo $this->layout()->content ?>
+            </div>
+        </div>
+        <div style="height: 30px;">
+            &nbsp;
+        </div>
+
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="/layouts/admin/srabon/js/jquery.js"></script>
+        <script src="/layouts/admin/srabon/js/jquery-ui-1.8.16.custom.min.js"></script>
+        <script src="/layouts/admin/srabon/js/bootstrap.js"></script>
+        <script src="/layouts/admin/srabon/js/prettify.js"></script>
+        <script src="/layouts/admin/srabon/js/jquery.sparkline.min.js"></script>
+        <script src="/layouts/admin/srabon/js/jquery.nicescroll.min.js"></script>
+        <script src="/layouts/admin/srabon/js/accordion.jquery.js"></script>
+        <script src="/layouts/admin/srabon/js/smart-wizard.jquery.js"></script>
+        <script src="/layouts/admin/srabon/js/vaidation.jquery.js"></script>
+        <script src="/layouts/admin/srabon/js/jquery-dynamic-form.js"></script>
+        <script src="/layouts/admin/srabon/js/fullcalendar.js"></script>
+        <script src="/layouts/admin/srabon/js/raty.jquery.js"></script>
+        <script src="/layouts/admin/srabon/js/jquery.noty.js"></script>
+        <script src="/layouts/admin/srabon/js/jquery.cleditor.min.js"></script>
+        <script src="/layouts/admin/srabon/js/data-table.jquery.js"></script>
+        <script src="/layouts/admin/srabon/js/TableTools.min.js"></script>
+        <script src="/layouts/admin/srabon/js/ColVis.min.js"></script>
+        <script src="/layouts/admin/srabon/js/plupload.full.js"></script>
+        <script src="/layouts/admin/srabon/js/elfinder/elfinder.min.js"></script>
+        <script src="/layouts/admin/srabon/js/chosen.jquery.js"></script>
+        <script src="/layouts/admin/srabon/js/uniform.jquery.js"></script>
+        <script src="/layouts/admin/srabon/js/jquery.tagsinput.js"></script>
+        <script src="/layouts/admin/srabon/js/jquery.colorbox-min.js"></script>
+        <script src="/layouts/admin/srabon/js/check-all.jquery.js"></script>
+        <script src="/layouts/admin/srabon/js/inputmask.jquery.js"></script>
+        <script src="/layouts/admin/srabon/js/excanvas.min.js"></script>
+        <script src="/layouts/admin/srabon/js/jquery.jqplot.min.js"></script>
+        <script src="/layouts/admin/srabon/js/custom-script.js"></script>
+
+        <!-- html5.js for IE less than 9 -->
+        <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="/layouts/admin/srabon/js/respond.min.js"></script>
+        <script src="/layouts/admin/srabon/js/ios-orientationchange-fix.js"></script>
+
+
+        <script type="text/javascript" src="/layouts/admin/js/backend.js"></script>
+        <script type="text/javascript" src="/layouts/admin/js/autoNumeric.js"></script>
+        <script type="text/javascript" src="/layouts/admin/js/uploadify/jquery.uploadify.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="/layouts/admin/js/uploadify/uploadify.css"/>
+    </body>
+</html>

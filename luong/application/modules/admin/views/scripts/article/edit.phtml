@@ -1,0 +1,98 @@
+<?php
+$row = $this->row;
+?>
+<?php if ($this->success) : ?>
+    <div class="alert alert-success fade in">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <strong>Well done! </strong> <?php echo $this->success ?>.
+    </div>
+<?php endif; ?>
+<div class="row">
+    <div class="span12">
+        <div class="widget-block">
+            <div class="widget-head">
+                <h5> Form ELements</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    <form class="form-horizontal well white-box" method="post" action="" enctype="multipart/form-data">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label">Tiêu đề</label>
+                                <div class="controls">
+                                    <input type="text" class="span4" name="art_name" value="<?php if (!empty($row->art_name)) echo $row->art_name ?>"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Name seo</label>
+                                <div class="controls">
+                                    <input type="text" class="span4" name="art_seo" value="<?php if (!empty($row->art_seo)) echo $row->art_seo ?>"/>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Danh mục</label>
+                                <div class="controls">
+                                    <select name='cat_id' class="span4">
+                                    	<?php $listCat = $this->listCat;?>
+                                    	<?php foreach ($listCat AS $item):?>
+                                        <option value="<?php echo $item->cat_id?>" <?php if ($row->cat_id == $item->cat_id) echo 'selected="selected"'?>><?php echo $item->cat_name?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Mô tả ngắn</label>
+                                <div class="controls">
+                                    <textarea class="span10" style="height: 100px" placeholder="Mô tả ngắn" name="art_brief" class="ckeditor"><?php echo $row->art_brief ?></textarea>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Nội dung</label>
+                                <div class="controls">
+                                    <textarea class="span8" name="art_content" id="art_content" class="ckeditor"><?php echo $row->art_content ?></textarea>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Hiện thị</label>
+                                <div class="controls">
+                                    <label class="radio inline">
+                                        <input type="radio" value="1" name="status" <?php if ($row->status == 1) echo 'checked="checked"' ?>>
+                                        ON</label>
+                                    <label class="radio inline">
+                                        <input type="radio" value="0" name="status" <?php if ($row->status == 0) echo 'checked="checked"' ?>>
+                                        OFF</label>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <a class="btn" href="<?php echo $this->contextPath; ?>">Cancel</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    CKEDITOR.replace('art_content',
+            {
+                toolbar:
+                        [
+                            {name: 'document', items: ['Source']},
+                            {name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript']},
+                            {name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl']},
+                            {name: 'links', items: ['Link', 'Unlink', 'Anchor']},
+                            {name: 'insert', items: ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak']},
+                            {name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize']},
+                            {name: 'colors', items: ['TextColor', 'BGColor']},
+                        ],
+                height: 300,
+            });
+</script>

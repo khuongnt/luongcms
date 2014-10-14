@@ -1,0 +1,17 @@
+<form class="box login" method="post" action="/admin/register.html">
+    <fieldset class="boxBody">
+        <?php if ($this->error) : ?>
+            <span style="color: red;">
+                <?php echo $this->error; ?>.
+            </span>
+        <?php endif; ?>
+        <label><span style="height: 20px;">Web Content Management System</span></label>
+        <input type="text" name="username" value=""  placeholder="Tên đăng nhập" required/>
+        <span></span>       
+        <input name="password" type="password" placeholder="Mật khẩu"/>
+        <input name="re_password" type="password" placeholder="Nhập lại mật khẩu"/>
+    </fieldset>
+    <footer>
+        <input type="submit" class="btnLogin" value="Đăng ký"/>
+    </footer>
+</form>

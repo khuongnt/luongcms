@@ -1,0 +1,46 @@
+<?php if ($this->success) : ?>
+    <div class="alert alert-success fade in">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <strong>Well done! </strong> <?php echo $this->success ?>.
+    </div>
+<?php endif; ?>
+<div class="row">
+    <div class="span12">
+        <div class="widget-block">
+            <div class="widget-head">
+                <h5> Form ELements</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    <form class="form-horizontal well white-box" method="post" action="" enctype="multipart/form-data">
+                        <?php if(isset($this->error)) echo '<p class="alert alert-danger"><strong>'.$this->error.'</strong></p>'; ?>
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label">Tiêu đề</label>
+                                <div class="controls">
+                                    <input type="text" class="span4" name="name" value="<?php if (!empty($this->editTag['name'])) echo $this->editTag['name']; ?>"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Đường dẫn</label>
+                                <div class="controls">
+                                    <input type="text" class="span4" name="slug" value="<?php if (!empty($this->editTag['slug'])) echo $this->editTag['slug']; ?>"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Mô tả</label>
+                                <div class="controls">
+                                    <textarea type="text" style="min-height:150px;" class="span6" name="description"><?php if (!empty($this->editTag['description'])) echo $this->editTag['description']; ?></textarea>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <a class="btn" href="<?php echo $this->contextPath; ?>">Cancel</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

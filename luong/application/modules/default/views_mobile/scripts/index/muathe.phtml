@@ -1,0 +1,33 @@
+<h1 class="title-bg"><strong>Đặt mua thẻ eDoctor</strong></h1>
+<br />
+<div class="contact-form">
+    <p>Hãy điền chính xác thông tin để eDoctor liên hệ lại với bạn!</p> <br />
+    <div id="contact-form">
+        <form method="POST" accept-charset="utf-8">
+            <input type="text" name="fullname" id="fullname" value="<?php if (isset($this->fullname)) echo $this->fullname; ?>" placeholder="Tên của bạn"> <br />
+            <input type="tel" name="mobile" id="mobile" value="<?php if (isset($this->mobile)) echo $this->mobile; ?>" placeholder="Số điện thoại" maxlength="12" onkeypress="return isNumberKey(event);"> <br />
+            <input type="email" name="email" id="email" value="<?php if (isset($this->email)) echo $this->email; ?>" placeholder="Email của bạn"> <br />
+            <select name="quantity" id="quantity">
+                <option value="1">1 thẻ</option>
+                <option value="2">2 thẻ</option>
+                <option value="3">3 thẻ</option>
+                <option value="4">4 thẻ</option>
+                <option value="5">5 thẻ</option>
+                <option value="6">6 thẻ</option>
+                <option value="7">7 thẻ</option>
+                <option value="8">8 thẻ</option>
+                <option value="9">9 thẻ</option>
+                <option value="10">10 thẻ</option>
+            </select> <br />
+            <input type="text" name="address" id="address" value="<?php if (isset($this->address)) echo $this->address; ?>" placeholder="Địa chỉ"> <br />
+            <textarea placeholder="Số lượng thẻ và thông tin bổ sung..." name="content" id='content'><?php echo isset($this->email) ? $this->email : 'Đặt mua 1 thẻ eDoctor'; ?></textarea> <br />
+            <input type="button" class="btn-cam" id="btn_order" value="Xác nhận"> <br />
+        </form>
+    </div>
+    <div id="notification"></div>
+    <div id="loading_overlay" class="loading" style="display: none;"></div>
+    <p class="note">
+        <i class="fa fa-thumbs-up"></i>
+        eDoctor <strong>cam kết hoàn lại 100%</strong> số tiền quý khách hàng đã mua thẻ eDoctor trong thời gian <strong>30 ngày</strong> kể từ ngày kích hoạt, nếu quý khách hàng không hài lòng về chất lượng dịch vụ cũng như các quyền lợi được cung cấp, và không muốn tiếp tục sử dụng dịch vụ của eDoctor.
+    </p>
+</div>

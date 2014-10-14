@@ -1,0 +1,71 @@
+<?php $errors = $this->errors; ?>
+<!-- ARTICLE -->
+<div id="article" class="curvyRedraw">
+    <div id="padding2">
+        <fieldset>
+            <legend><i class="fa fa-pencil-square-o"></i> Cập nhật thông tin</legend>
+            <?php if ($this->notice): ?>
+                <div class="alert alert-success" style="width: 90%; margin: 0 auto 20px;">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <?php echo $this->notice; ?>
+                </div>
+            <?php endif; ?>
+            <?php if ($this->message): ?>
+                <div class="alert alert-error" style="width: 90%; margin: 0 auto 20px;">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <?php echo $this->notice; ?>
+                </div>
+            <?php else: ?>
+                <form class="form-horizontal" action="" method="POST">
+                    <div class="control-group">
+                        <label class="control-label">Email</label>
+                        <div class="controls">
+                            <input type="text" name="email" class="span4" readonly="readonly" value="<?php echo $this->email ?>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">Số điện thoại</label>
+                        <div class="controls">
+                            <input type="text" name="mobile" class="span4" value="<?php echo $this->mobile ?>">
+                            <?php if ($errors->mobile_error): ?>
+                                <span class="help-block has-error"><?php echo $errors->mobile_error ?></span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">Họ và tên</label>
+                        <div class="controls">
+                            <input type="text" name="fullname" class="span4" value="<?php echo $this->fullname ?>">
+                            <?php if ($errors->fullname_error): ?>
+                                <span class="help-block has-error"><?php echo $errors->fullname_error ?></span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Địa chỉ</label>
+                        <div class="controls">
+                            <textarea rows="" cols="" name="address" class="span4"><?php echo $this->address ?></textarea>
+                            <?php if ($errors->address_error): ?>
+                                <span class="help-block has-error"><?php echo $errors->address_error ?></span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-top: 20px;">
+                        <div class="controls">
+                            <button style="padding:0 18px;" type="submit" class="btn-flat"><i class="fa fa-check-square-o"></i> Cập nhật</button>
+                        </div>
+                    </div>
+                </form>
+            <?php endif; ?>
+        </fieldset>
+    </div>
+</div>
+<!-- END ARTICLE -->
+<!-- SIDEBAR --> 
+<div id="sidebar">
+    <div class="widget did-you-know cycle cycle-diy">
+        <?php echo $this->render('profile.phtml'); ?>
+    </div>
+    <?php echo $this->render('right.phtml'); ?>
+</div>
+<!-- END SIDEBAR --> 

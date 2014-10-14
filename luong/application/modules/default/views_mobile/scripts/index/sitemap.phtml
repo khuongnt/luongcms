@@ -1,0 +1,38 @@
+		<?php $xml = '<?xml version="1.0" encoding="utf-8"?>';?>
+		<?php echo $xml?>
+		<?php 
+		$benh 	= $this->benh;
+		$thuoc 	= $this->thuoc;
+		$art 	= $this->art;
+		?>
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+		<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+		<?php foreach ($art AS $item):
+			$link = "http://edoctor.vn/".Luong_Helper_Utils::cv2urltitle($item->art_name).".htm";
+		?>
+		<url>
+		  <loc><?php echo $link?></loc>
+		  <changefreq><?php echo $item->art_name?> - eDoctor - Chăm sóc sức khoẻ toàn diện 247</changefreq>
+		  <priority>0.80</priority>
+		</url>
+		<?php endforeach;?>
+		<?php foreach ($benh AS $item):
+			$link = "http://edoctor.vn/benh/".Luong_Helper_Utils::cv2urltitle($item->dis_name).".htm";
+		?>
+		<url>
+		  <loc><?php echo $link?></loc>
+		  <changefreq><?php echo $item->dis_name?> - eDoctor - Chăm sóc sức khoẻ toàn diện 247</changefreq>
+		  <priority>0.80</priority>
+		</url>
+		<?php endforeach;?>
+		
+		<?php foreach ($thuoc AS $item):
+			$link = "http://edoctor.vn/thuoc/".Luong_Helper_Utils::cv2urltitle($item->med_name).".htm";
+		?>
+		<url>
+		  <loc><?php echo $link?></loc>
+		  <changefreq><?php echo $item->med_name?> - eDoctor - Chăm sóc sức khoẻ toàn diện 247</changefreq>
+		  <priority>0.80</priority>
+		</url>
+		<?php endforeach;?>
+		</urlset>

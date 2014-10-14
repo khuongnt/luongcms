@@ -1,0 +1,58 @@
+<?php 
+$data = $this->data;
+$listCat = $this->listCat;
+$list = $this->list;
+ ?>
+<h1 id="page-title">Tra cứu bệnh A - Z</h1>
+<br />
+<div id="article" class="curvyRedraw">
+	<div class="result-search">
+		<div class="action-from-search">
+			<a class="btn-cam" href="/mua-the.html" title="Mua thẻ eDoctor">Mua thẻ eDoctor</a>
+		</div>
+		<div id="rsSearch">
+			<?php 
+			$i = 1;
+			foreach ($list AS $item):
+			$link = '/benh/'.$item->dis_seo.'.htm';
+			?>
+				<div class="item-search <?php if($i%2==0) echo "odd"; else echo "even"?>"><a href="<?php echo $link?>" class="help"><i class="fa fa-angle-right"></i> <?php Echo $item->dis_name?></a></div>
+			<?php 
+			$i++;
+			endforeach;
+			?>
+		</div>
+		<div id="sidebar">
+			<div style="margin-right:10px;" class="widget sidenav">
+				<br>
+				<a class="m-btn" href="tel:18006115"><i class="fa fa-phone"></i> 18006115 (miến phí)</a>
+				<br />
+				<a class="m-btn" href="/tra-cuu-thuoc.htm">Tra cứu thuốc</a>
+				<br>
+				<a class="m-btn active" href="/tra-cuu-benh.htm">Tra cứu bệnh</a>
+			</div>
+		</div>
+	</div>
+	<div class="alpha-bet">
+		<span class="df" rel="A">A</span>
+		<span class="df" rel="B">B</span>
+		<span class="df" rel="C">C</span>
+		<span class="df" rel="D">D</span>
+		<span class="df" rel="G">G</span>
+		<span class="df" rel="H">H</span>
+		<span class="df" rel="K">K</span>
+		<span class="df" rel="L">L</span>
+		<span class="df" rel="M">M</span>
+		<span class="df" rel="N">N</span>
+		<span class="df" rel="O">O</span>
+		<span class="df" rel="P">P</span>
+		<span class="df" rel="R">R</span>
+		<span class="df" rel="S">S</span>
+		<span class="df" rel="T">T</span>
+		<span class="df" rel="U">U</span>
+		<span class="df" rel="V">V</span>
+		<span class="df" rel="X">X</span>
+		<span class="df" rel="Y">Y</span>
+	</div>
+</div>
+<div class="clear"></div>

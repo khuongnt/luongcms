@@ -1,0 +1,59 @@
+<?php $user = $this->user; ?>
+<!-- ARTICLE -->
+<div id="article" class="curvyRedraw">
+    <div id="padding2">
+        <fieldset>
+            <legend class="mgb20"><i class="fa fa-info-circle fa-lg"></i> Thông tin tài khoản</legend>
+            <?php if ($user->phoneNumber == ""): ?>
+                <div class="alert alert-error" style="width: 91%; margin: 0 auto 20px;">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    Để có thể nghe được lịch sử cuộc gọi bạn vui lòng nhập số điện thoại của bạn.
+                </div>
+            <?php endif; ?>
+            <?php if ($user->phoneNumber && $user->mobileVerified == false): ?>
+                <div class="alert alert-error" style="width: 91%; margin: 0 auto 20px;">
+                    <i class="fa fa-mobile fa-lg"></i> Số điện thoại của bạn chưa được xác thực, bạn vui lòng xác thực <a href="/xac-thuc-tai-khoan.htm" class="help" style="font-size: 14px">tại đây</a>.
+                </div>
+            <?php endif; ?>
+            <table class="table table-striped" style="border:none;background-color: #fff;">
+                <thead>
+                <tbody>
+                    <tr>
+                        <td>Tài khoản</td>
+                        <td><?php echo $user->email ?></td>
+                    </tr>
+                    <tr>
+                        <td>Họ và tên</td>
+                        <td><?php echo $user->fullName ?></td>
+                    </tr>
+                    <tr>
+                        <td>Số điện thoại</td>
+                        <td><?php echo $user->phoneNumber ?></td>
+                    </tr>
+                    <tr>
+                        <td>Giới tính</td>
+                        <td><?php echo $user->gender ?></td>
+                    </tr>
+                    <tr>
+                        <td>Nghề nghiệp</td>
+                        <td><?php echo $user->job ?></td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ</td>
+                        <td><?php echo $user->address ?></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="align-center mgb20"><a style="float:right;" href="/cap-nhat-thong-tin.htm" class="btn-flat btn-update-info"><i class="fa fa-pencil-square-o"></i> Cập nhật</a></div>
+        </fieldset>
+    </div>
+</div>
+<!-- END ARTICLE -->
+<!-- SIDEBAR --> 
+<div id="sidebar">
+    <div class="widget did-you-know cycle cycle-diy">
+        <?php echo $this->render('profile.phtml'); ?>
+    </div>
+    <?php echo $this->render('right.phtml'); ?>
+</div>
+<!-- END SIDEBAR --> 

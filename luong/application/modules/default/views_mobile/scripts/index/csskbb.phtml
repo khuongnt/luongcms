@@ -1,0 +1,419 @@
+		<?php $list = $this->list;?>
+		<!-- Home -->
+		<div id="home" data-stellar-background-ratio="0.6">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+					<h2 class="element_from_top">99% các Mẹ bầu nghĩ rằng mình đã đủ kiến thức khi mang thai</h2>
+					<p>Nhưng bạn có chắc chắn rằng mình thực sự đủ kiến thức <strong>chăm sóc bà bầu</strong> và giúp thai nhi phát triển tốt suốt “9 tuần trăng”?</p>
+					<p>
+						<a href="#nguyennhan" class="btn btn-lg btn-default element_from_left"><i class="fa fa-hand-o-right"></i> Tìm hiểu ngay</a>
+					</p>
+					<div>
+						<p>Theo số liệu nghiên cứu của của Đại học Kinh Tế Quốc Dân qua khảo sát trên <strong>10.000</strong> mẫu là phụ nữ độ tuổi <strong>từ 25 đến 45</strong> tại thành phố Hà nội và các tỉnh Thái Nguyên, Hải Phòng, Thanh Hóa.. đã cho kết quả <strong>99%</strong> mẹ đang mang bầu nghĩ rằng họ có đủ kiến thức và thực hành đúng để thai nhi phát triển tốt. Kì thực, rất nhiều suy nghĩ của mẹ bầu là sai lạc, bởi hầu hết các Mẹ bầu đều dựa vào kinh nghiệm chăm sóc bà bầu của bản thân, từ những người thân hoặc tham khảo từ “Chuyên gia” Google. <br>
+						<strong><i>Thực tế cho thấy là các Mẹ bầu chủ yếu dựa vào kinh nghiệm, nhưng có không ít những kinh nghiệm chăm sóc bà bầu sai lầm mà các mẹ không biết.</i></strong></p>
+
+						<p>Ví dụ: Khi mang thai các bà bầu luôn sót ruột không biết em bé phát triển đến đâu nên họ thường có tâm lý muốn đi siêu âm thường xuyên, nhưng họ không biết rằng siêu âm nhiều lần trong 2 tháng đầu nếu không có sự chỉ định của bác sỹ sẽ ảnh hưởng rất lớn đến sức khỏe của em bé.</p>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Home end -->
+		<!-- Solutions -->
+		<div id="solutions">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<h3>Chọn đâu được nguồn thông tin chính xác?</h3>
+						<p>“Chuyên gia GOOGLE” là câu trả lời đầu tiên, nhưng chưa ai biết rằng trên 70% thông tin từ internet đều thiếu 
+						tin cậy (Theo nghiên cứu của trường Đại học Kinh Tế Quốc Dân về nhu cầu tìm kiếm thông tin của các bà mẹ đang mang thai).
+						Không ai xác minh tính chuẩn xác của thông tin ?
+						</p>
+						<h3 class="element_from_left">Kiến thức chăm sóc bà bầu đáng tin cậy ở đâu?</h3>
+						<p>
+						Chỉ có thể là thông tin được tư vấn trực tiếp bởi các bác sỹ có chuyên môn về khoa sản, nhi, chăm sóc sức khỏe bà bầu mới thực sự đáng tin cậy và chuẩn xác để các Mẹ áp dụng trong suốt thai kỳ, đảm bảo sự phát triển tốt nhất cho thai nhi. 
+						Nhưng làm thế nào để liên hệ được với nhiều bác sỹ, với nhiều chuyên khoa mà không có mối quan hệ quen biết nào cả?
+						</p>
+						<h3><i class="fa fa-hand-o-right"></i> Dịch vụ thẻ chăm sóc sức khỏe eDoctor có cái các Mẹ đang cần…</h3>
+						
+						<div class="contact-form element_from_bottom" id="contact-form">
+							<p style="padding-bottom:10px;"><strong><i class="fa fa-hand-o-right"></i> Đặt mua thẻ eDoctor ngay hôm nay</strong></p>
+							<form action="/ajax/muathe" method="POST" accept-charset="utf-8">
+								<div style="float:left;width:280px;">
+									<input type="text" name="fullname" id="fullname" value="" placeholder="Tên của bạn"> <br />
+									<input type="text" name="mobile" id="mobile" value="" placeholder="Số điện thoại" maxlength="12" onkeypress="return isNumberKey(event);"> <br />
+									<input type="text" name="address" id="address" value="" placeholder="Địa chỉ giao thẻ"> 
+								</div>
+								<div class="clear"></div>
+								<textarea placeholder="Số lượng thẻ và thông tin bổ sung..." name="" id='content'></textarea>
+								<div class="clear"></div>
+								<input type="button" style="float:left; font-weight:bold; font-size:16px; font-family:'Roboto';" class="btn-cam" onclick="btn_muathe('contact-form');" value="ĐẶT MUA THẺ">
+								<div class="clear"></div>
+								<div id="notification"></div>
+							</form>
+						</div>
+
+						<div class="clear"></div>
+					</div>
+					<div class="col-md-4">
+						<p style="text-align:center; margin-top:30px;"><img src="/layouts/responsive/img/5.jpg" alt="cham soc suc khoe ba bau thieu chinh xac"></p> 
+						<br />
+						<div class="note_eee">
+							<p><i style="color:green;" class="fa fa-hand-o-left"></i> <strong>MIỄN PHÍ</strong> dùng thử 24h đầu tiên cho mỗi số điện thoại. Ngay từ bây giờ bạn có thể gọi đến đầu số 18006115 (miễn phí cước gọi) để dùng thử và trải nghiệm dịch vụ tư vấn, chăm sóc sức khỏe của eDoctor.</p>
+						</div>
+						<br />
+						<div class="note_eee">
+							<p><i style="color:green;" class="fa fa-hand-o-left"></i> <strong>Hoàn lại 100% giá trị thẻ</strong> nếu khách hàng không muốn tiếp tục sử dụng dịch vụ của eDoctor trong <strong>30 ngày</strong> đầu tiên.</p>
+						</div>
+						<br />
+						<div class="note_eee">
+							<p><i style="color:green;" class="fa fa-hand-o-left"></i> Đội ngũ trên <strong>350 giáo sư, bác sỹ</strong> giàu kinh nghiệm luôn sẵn sàng đưa ra những lời khuyên, tư vấn và hướng dẫn chăm sóc sức khỏe cho bạn và gia đình.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Solutions end -->
+		<!-- Who we are -->
+		<div id="who-we-are">
+			<div id="about-edoctor" class="container">
+				<div style="margin-bottom:25px;" class="row">
+					<div class="col-md-6 element_from_left">
+						<h3><strong>eDoctor là gì?</strong></h3>
+						<div class="pink-note">
+							<p><i class="fa fa-arrow-circle-right"></i> eDoctor là công ty công nghệ cung cấp <strong>“Dịch vụ tư vấn chăm sóc sức khỏe”</strong> qua đầu số <strong>18006115</strong>. <br>
+								Dù bạn ở bất kỳ đâu, tại bất cứ thời điểm nào 24/24, bạn đều có thể tiếp cận dễ dàng với các bác sỹ, chuyên gia hàng đầu của eDoctor để được tư vấn về các vấn đề sức khỏe của bạn và gia đình bạn.
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6 element_from_right">
+						<h3><strong>eDoctor có những gì ?</strong></h3>
+						<div class="pink-note">
+							<p><i class="fa fa-arrow-circle-right"></i> eDoctor -  “bệnh viện mini thu nhỏ”, <strong>dịch vụ <a href="http://edoctor.vn/dich-vu-tu-van-cham-soc-suc-khoe.htm">tư vấn sức khỏe</a> lần đầu có ở Việt Nam</strong> tích hợp trên <strong>350 bác sỹ</strong> chuyên khoa trên 10 năm kinh nghiệm luôn <strong>túc trực 24/7</strong>, 
+							sẵn sàng tiếp nhận mọi câu hỏi về các triệu chứng bệnh lý phát sinh trong quá trình bạn mang thai, tư vấn kiến thức, kỹ năng về dinh dưỡng, cách chăm sóc trẻ sau sinh, 
+							chế độ tập luyện và cách làm đẹp khi mang bầu.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="padding-bottom:20px;" id="doctor">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 centered">
+							<h2 class="element_from_top">Đội ngũ bác sỹ trực tiếp tham gia tư vấn chăm sóc sức khỏe của eDoctor</h2>
+							<p style="margin:0 0 5px 0; font-weight:bold; font-style:italic;">Các mẹ bầu sẽ được tư vấn những kiến thức đúng đắn nhất và giúp con tránh xa các nguy hiểm không đáng có bằng cách kết nối với những bác sỹ hàng đầu của eDoctor.</p>
+							<p>
+							Chỉ cần gọi về Tổng đài <strong>18006115</strong> (miễn phí cước gọi) - hàng trăm bác sỹ là các Giáo sư, Phó Giáo Sư, Tiến sỹ, Thầy thuốc ưu tú… đang chờ điện thoại của bạn. <br>
+							Một số bác sỹ tiêu biểu đang tham gia trả lời tư vấn:
+							</p>
+							<!-- Bx slider -->
+							<div id="doctorslide" class="slider">
+								<ul class="">
+									<li>
+										<div class="col-md-4 col3 item-doctor">
+											<div class="img-doctor"><img src="/layouts/responsive/img/giao-su-tien-si-duong-trong-hieu.png" title="GS.TS Dương Trọng Hiếu" alt="bac si tu van cham soc suc khoe" /></div>
+											<h4>GSTS Dương Trọng Hiếu</h4>
+											<span class="element_from_bottom">Bác sỹ chuyên khoa II y học cổ truyền</span>
+											<p>Kết hợp cả Đông và Tây y trong việc dưỡng thai sẽ rất tốt cho sức khỏe của thai phụ và sự phát triển của thai nhi.</p>
+										</div>
+										<div class="col-md-4 col3 item-doctor">
+											<div class="img-doctor"><img src="/layouts/responsive/img/pho-giao-su-tien-si-nguyen-thi-ngoc-dinh.png" title="PGS.TS Nguyễn Thị Ngọc Dinh" alt="bac si tư vấn sức khỏe" /></div>
+											<h4>PGS .TS Nguyễn Thị Ngọc Dinh</h4>
+											<span class="element_from_bottom">Thầy thuốc chuyên khoa tai, mũi, họng</span>
+											<p>Khi cơ quan hô hấp của Mẹ bầu bị tổn thương có thể sẽ gây nguy hiểm đến thai nhi. Vì vậy Mẹ bầu cần được trang bị kiến thức phòng tránh tốt nhất.</p>
+										</div>
+										<div class="col-md-4 col3 item-doctor">
+											<div class="img-doctor"><img src="/layouts/responsive/img/bac-si-vu-quoc-tuan.png" title="Thạc sỹ, bác sỹ Vũ Quốc Tuấn" alt="bác sỹ tư vấn chăm sóc sức khỏe" /></div>
+											<h4>ThS. BS Vũ Quốc Tuấn</h4>
+											<span class="element_from_bottom">Bác sỹ chuyên khoa sản</span>
+											<p>Tất cả những băn khoăn khi mang thai chúng tôi đều có thể tư vấn giúp các bạn thông qua điện thoại mà không nhất thiết phải đi lại nhiều lần đến bệnh viện.</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- Bx slider end -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Doctor end-->
+			<!-- Partner -->
+			<div id="partner" class="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 centered">
+							<h2 class="element_from_top">Đối tác của eDoctor</h2>
+							<ul class="">
+								<li><a href="#" title="Cục công nghệ thông tin - Bộ Y Tế"><img alt="cuc cong nghe thong tin bo y te" src="/layouts/responsive/img/cuc-thong-tin-bo-y-te.jpg" alt=""></a></li>
+								<li><a href="#" title="Hội thầy thuốc trẻ Việt Nam"><img alt="hoi thay thuoc tre viet nam" src="/layouts/responsive/img/hoi-thay-thuoc-tre.jpg" alt=""></a></li>
+								<li><a href="#" title="Bệnh viện Việt Đức"><img alt="benh vien viet duc" src="/layouts/responsive/img/benh-vien-viet-duc.png" alt=""></a></li>
+								<li><a href="#" title="Bệnh viện Bảo Sơn"><img alt="benh vien bao son" src="/layouts/responsive/img/benh-vien-bao-son.jpg" alt=""></a></li>
+								<li><a href="#" title="Bệnh viện Medlatec"><img alt="benh vien medlatec" src="/layouts/responsive/img/benh-vien-medlatec.jpg" alt=""></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Partner end -->
+
+			<div id="baochi">
+				<div class="container">
+					<div class="centered">
+						<h2 class="element_from_top">Báo chí nói gì về dịch vụ tư vấn chăm sóc sức khỏe eDoctor</h2>
+						<!-- Partner -->
+						<div id="magazine" class="">
+							<div id="maga1" class="des-magazine">
+								<p>Có tới 72% người được hỏi cho biết họ thường xuyên gọi điện nhờ tư vấn của bác sỹ</p>
+								<p><a rel="nofollow" target="_blank" href="http://dantri.com.vn/suc-khoe/72-benh-nhan-thuong-xuyen-goi-dien-nho-bac-si-tu-van-877470.htm" title="">Xem chi tiết</a></p>
+							</div>
+							<div id="maga2" class="des-magazine">
+								<p>eDoctor kết nối trực tiếp giữa người dân ở mọi miền đất nước đến các bác sỹ chuyên khoa để được tư vấn sức khỏe mọi lúc mọi nơi</p>
+								<p><a style="display:none;" rel="nofollow" target="_blank" href="http://suckhoedoisong.vn/thoi-su/phat-trien-ung-dung-cong-nghe-thong-tin-trong-y-te-tu-xa-20140521102341559.htm" title="">Xem chi tiết</a></p>
+							</div>
+							<div id="maga3" class="des-magazine">
+								<p>PGS.TS Nguyễn Hoàng Phương, Phó Cục trưởng Cục Công nghệ thông tin, Bộ Y tế cho biết: Đây là mô hình chăm sóc sức khỏe đầu tiên ở Việt Nam tận dụng tối đa sự tiện lợi của điện thoại cá nhân mà người sử dụng muốn quan tâm đến sức khỏe của mình có thể gọi điện nhờ tư vấn bất kỳ lúc nào, bất kỳ nơi đâu.</p>
+								<p><a style="display:none;" rel="nofollow" target="_blank" href="http://kienthuc.net.vn/song-khoe/quan-ly-suc-khoe-voi-chi-phi-thap-343793.html" title="">Xem chi tiết</a></p>
+							</div>
+							<div id="maga4" class="des-magazine">
+								<p>eDoctor đã và đang được triển khai, góp phần tích cực vào việc giảm sự quá tải của các bệnh viện và phòng khám, đưa công nghệ y học hiện đại áp dụng vào đời sống con người.</p>
+								<p><a style="display:none;" rel="nofollow" target="_blank" href="http://giadinh.net.vn/suc-khoe/bac-si-dong-hanh-247-cung-dich-vu-tu-van-suc-khoe-tu-xa-2014050109104410.htm" title="">Xem chi tiết</a></p>
+							</div>
+							<div id="maga5" class="des-magazine">
+								<p>Bác sỹ Phạm Thanh Xuân: Việc có những đơn vị tư vấn sức khỏe sẽ rất tốt, vừa giúp tuyên truyền cho bà con phòng tránh bệnh tật vừa hỗ trợ được rất nhiều cho ngành y trong việc giảm quá tải bệnh viện. </p>
+								<p><a rel="nofollow" target="_blank" href="http://vtc.vn/321-490940/suc-khoe/canh-giac-voi-dien-bien-benh-tay-chan-mieng.htm" title="">Xem chi tiết</a></p>
+							</div>
+							<ul class="">
+								<li>
+									<span data="#maga1" rel="nofollow" target="_blank" title=""><img alt="bao dan tri" src="/layouts/responsive/img/bao-dan-tri.png" alt=""></span>
+								</li>
+								<li>
+									<span data="#maga2" rel="nofollow" target="_blank" title=""><img alt="bao suc khoe doi song" src="/layouts/responsive/img/bao-suc-khoe-doi-song.png" alt=""></span>
+								</li>
+								<li>
+									
+									<span data="#maga3" rel="nofollow" target="_blank" title=""><img alt="bao kien thuc viet nam" src="/layouts/responsive/img/bao-kien-thuc-viet-nam.png" alt=""></span>
+								</li>
+								<li>
+									
+									<span data="#maga4" rel="nofollow" target="_blank" title=""><img alt="bao gia dinh xa hoi" src="/layouts/responsive/img/bao-gia-dinh-xa-hoi.png" alt=""></span>
+								</li>
+								<li>
+									<span data="#maga5" rel="nofollow" target="_blank" title=""><img alt="bao tin tuc vtc news" src="/layouts/responsive/img/bao-tic-tuc-vtc-news.png" alt=""></span>
+								</li>
+							</ul>
+						</div>
+						<!-- Partner end -->
+					</div>
+				</div>
+			</div>
+
+			<div id="customer" data-stellar-background-ratio="0.8">	
+				<!-- Customer -->
+				<div id="" class="container">
+					<h2>Khách hàng nói gì về dịch vụ tư vấn chăm sóc sức khỏe eDoctor</h2>
+				</div>
+				<div id="" class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="des-customer">
+								<p><i class="fa fa-quote-left"></i> Đây là lần đầu tiên mình sử dụng dịch vụ <a href="
+									http://edoctor.vn/dich-vu-tu-van-cham-soc-suc-khoe.htm"><strong>tư vấn sức khỏe qua điện thoại</strong></a>, mới đầu thì cũng không quen lắm vì từ trước không có thói quen gọi điện hỏi bác sỹ mà cứ ốm đau là mình đến viện khám luôn. Nhưng gọi vài lần thấy quen dần bởi các bác sỹ tư vấn rất nhiệt tình, mình áp dụng theo chỉ dẫn của bác sỹ thấy rất hiệu quả. Giờ gia đình mình có ai bị ốm đau gì nhẹ là gọi điện đến eDoctor gặp bác sỹ tư vấn nên ít khi phải đi viện khám, tiết kiệm được rất nhiều thời gian và tiền nữa. Chúc eDoctor ngày càng phát triển! <i class="fa fa-quote-right"></i></p>
+							</div>
+							<div class="cus-info element_from_bottom">
+								<img alt="khach hang cham soc suc khoe" src="/upload/images/nguyen-thu-thuy.jpg" alt="cham soc suc khoe ba bau">
+								<span><i class="fa fa-comment"></i> Chị Nguyễn Thu Thủy <br> Nhân viên văn phòng. Tổ dân phố số 2, Yên Nghĩa, Hà Đông</span>
+							</div>
+						</div>
+						<div class="col-md-6 element_from_right">
+							<div class="des-customer">
+								<p><i class="fa fa-quote-left"></i> Mình đang mang bầu em bé thứ 2 nhưng về các kỹ năng <strong>chăm sóc sức khỏe bà bầu</strong> và nhất là chăm sóc bé mình còn thiếu nhiều lắm, mấy hôm lang thang trên diễn đàn thấy các Mẹ nói nhiều về dịch vụ eDoctor có thể giúp các mẹ có thêm kiến thức chăm sóc bé nên mình mua liền. Mình gọi thì được gặp các bác sỹ tư vấn, trời, rất tuyệt, bác sỹ tư vấn rất nhiệt tình, hơn thế còn được giảm giá khi đi mua đồ trẻ em, đi spa nữa. Mình đã bảo các chị gái của mình và họ cũng đã dùng và đánh giá rất tốt. <i class="fa fa-quote-right"></i></p>
+							</div>
+							<div class="cus-info element_from_bottom">
+								<img alt="khach hang cham soc suc khoe ba bau" src="/upload/images/nguyen-minh-ly.jpg" alt="">
+								<span><i class="fa fa-comment"></i>Chị Nguyễn Minh Lý <br> Mai Dịch, Cầu Giấy, HN</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Customer end -->
+			</div>
+			<div class="container">
+				<div class="row">
+					<div id="nguyennhan" class="col-md-12">
+						<div class="row">
+							<h2>Hãy hỏi các bác sỹ của eDoctor về cách chăm sóc bà bầu, chăm sóc bé</h2>
+							<div class="col-md-12">
+								<p style="font-weight:bold; margin-top:20px;">Điều tra của Viện Dinh Dưỡng Quốc Gia cho thấy,  trên <a target="_blank" href="http://suckhoe.edoctor.vn/d67-me-hai-con-vi-thieu-kien-thuc-dinh-du%E1%BB%A1ng-khi-mang-bau.htm"><strong>70%</strong> Mẹ bầu thiếu kiến thức toàn diện khi mang thai</a>, dẫn ra một vài ví dụ:</p>
+							</div>
+							<div class="col-md-6">
+								<div class="pink-note">
+									<ul style="margin:0;">
+										<li><i class="fa fa-arrow-right"></i> Thai nghén kéo dài ảnh hưởng thế nào đến sức khỏe của thai nhi?</li>
+										<li><i class="fa fa-arrow-right"></i> Mẹ thiếu máu khi mang bầu bé có làm sao?</li>
+										<li><i class="fa fa-arrow-right"></i> Phòng chống tiểu đường khi mang thai như thế nào?</li>
+										<li><i class="fa fa-arrow-right"></i> Sốt virus khi bé 3 tháng liệu bé có sao không?</li>
+										<li><i class="fa fa-arrow-right"></i> Ăn uống, tập luyện thế nào thì tốt cho cả mẹ và bé?</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div style="margin-top:20px;" class="note_eee">
+									<p class="element_from_right">
+									Giải pháp: Hãy gọi điện thoại cho các bác sỹ của eDoctor, bạn sẽ biết phải làm thế nào để giữ sức trong suốt thời gian thai nghén? Vì sao Mẹ bầu lại thiếu máu? Vì sao thiếu máu và phải bổ sung bằng cách nào? Làm gì để tránh khi dịch bệnh đến? Chế độ dinh dưỡng thế nào là đủ?… Mẹ sẽ không phải nhiều lần đến bệnh viện, phòng khám; tiết kiệm thời gian và chi phí nhiều lần so với cách thông thường.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-6 ">
+								<div class="contact-form element_from_bottom" id="contact-form2">
+									<p style="padding-bottom:10px;"><strong><i class="fa fa-hand-o-right"></i> Đặt mua thẻ eDoctor ngay hôm nay</strong></p>
+									<form action="/ajax/muathe" method="POST" accept-charset="utf-8">
+										<div style="float:left;width:280px;">
+											<input type="text" name="fullname" id="fullname" value="" placeholder="Tên của bạn"> <br />
+											<input type="text" name="mobile" id="mobile" value="" placeholder="Số điện thoại" maxlength="12" onkeypress="return isNumberKey(event);"> <br />
+											<input type="text" name="address" id="address" value="" placeholder="Địa chỉ giao thẻ"> 
+										</div>
+										<div class="clear"></div>
+										<textarea placeholder="Số lượng thẻ và thông tin bổ sung..." name="" id='content'></textarea>
+										<div class="clear"></div>
+										<input type="button" style="float:left; font-weight:bold; font-size:16px; font-family:'Roboto';" class="btn-cam" onclick="btn_muathe('contact-form2');" value="ĐẶT MUA THẺ">
+										<div class="clear"></div>
+										<div id="notification"></div>
+									</form>
+								</div>
+							</div>
+							<div style="float:left;" class="col-md-6">
+								<div class="note_eee element_from_right">
+									<p><i style="color:red; font-size:14px; width:auto; line-height:20px; height:auto;" class="fa fa-hand-o-right"></i>
+										Đội ngũ trên <strong>350 giáo sư, bác sỹ</strong> giàu kinh nghiệm luôn sẵn sàng đưa ra những lời khuyên, tư vấn và hướng dẫn chăm sóc sức khỏe cho bạn và gia đình.
+									</p>
+								</div>
+								<br />
+								<div class="note_eee element_from_right">
+									<p><i style="color:red; font-size:14px; width:auto; line-height:20px; height:auto;" class="fa fa-hand-o-right"></i> <strong>MIỄN PHÍ</strong> dùng thử 24h đầu tiên cho mỗi số điện thoại. Ngay từ bây giờ bạn có thể gọi đến đầu số <a href="tel:18006115" title=""><strong>18006115</strong></a> (miễn phí cước gọi) để dùng thử và trải nghiệm dịch vụ tư vấn, chăm sóc sức khỏe của eDoctor. </p>
+								</div>
+								<br />
+								<div class="note_eee element_from_bottom">
+									<p><i style="color:red; font-size:14px; width:auto; line-height:20px; height:auto;" class="fa fa-hand-o-right"></i> <strong>Hoàn trả 100% tiền mua thẻ trong vòng 30 ngày đầu tiên</strong>.. nếu quý khách hàng cảm thấy không hài lòng và không muốn tiếp tục sử dụng dịch vụ của eDoctor.</p>
+								</div>
+								<br />
+								<div class="note_eee element_from_right">
+									<p><i style="color:red; font-size:14px; width:auto; line-height:20px; height:auto;" class="fa fa-hand-o-right"></i> Được <strong>thăm khám tại nhà</strong> mỗi năm 2 lần bởi các bác sỹ của eDoctor.</p>
+								</div>
+								<br />
+								<div class="note_eee element_from_bottom">
+									<p><i style="color:red; font-size:14px; width:auto; line-height:20px; height:auto;" class="fa fa-hand-o-right"></i> Được hướng dẫn chăm sóc sức khỏe hàng tháng qua số điện thoại: <a href="tel:18006115" title=""><strong>18006115</strong></a></p>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Who we are end -->
+		<!-- Services -->
+		<div id="services">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 centered">
+						<h2>Dịch vụ tư vấn, chăm sóc sức khỏe eDoctor có gì hấp dẫn?</h2>
+					</div>
+					<div class="col-md-4 col3 element_from_left">
+						<span title="Không cần xếp hàng, chỉ cần gọi điện thoại và gặp ngay bác sỹ.." class="roundal"><i class="fa fa-phone"></i></span>
+						<h4>Nhanh chóng</h4>
+						<p>Không giống xếp hàng chờ khám ở bệnh viện, phòng khám; Không giống việc gọi liên tục bị máy 
+						bận mà eDoctor sẵn sàng đáp ứng cùng lúc nhiều cuộc gọi nhờ hệ thống tổng đài 
+						thông minh cộng với đội ngũ bác sỹ đông đảo luôn sẵn sàng tiếp nhận cuộc gọi không để khách hàng phải chờ đợi.
+						</p>
+					</div>
+					<div class="col-md-4 col3 element_from_top">
+						<span title="Đội ngũ bác sỹ giàu kinh nghiệm sẽ cho bạn những lời khuyên bổ ích" class="roundal"><i class="fa fa-thumbs-up"></i></span>
+						<h4>Hiệu quả</h4>
+						<p>
+						Các bác sỹ tư vấn của eDoctor đều là các bác sỹ đã và đang công tác lâu năm tại các bệnh viện tuyến trung ương lớn trên toàn quốc, 
+						đã có nhiều năm kinh nghiệm tư vấn qua điện thoại cho bệnh nhân nên mọi vấn đề của khách hàng đều được giải 
+						đáp một cách nhanh ngọn, súc tích, dễ hiểu và chất lượng.
+						</p>
+					</div>
+					<div class="col-md-4 col3 element_from_right">
+						<span title="Tiết kiệm thời gian, tiết kiệm chi phí khám, chữa bệnh" class="roundal"><i class="fa fa-usd"></i></span>
+						<h4>Tiết kiệm</h4>
+						<p>eDoctor là sản phẩm chăm sóc sức khỏe rất hợp lý, đồng thời giúp bạn tiết kiệm thời gian, công sức cho mỗi lần phải đến bệnh viện. Bạn chỉ ngồi nhà hay văn phòng làm việc nhấc máy và gọi <strong>1800 6115</strong> để nhận ngay những tư vấn tận tình, chính xác từ bác sỹ để bạn và bé khỏe suốt 9 tháng thai kỳ.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Services end -->
+		<div id="uudai">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="buy-by-phone">
+							<b>Đặt mua thẻ chăm sóc sức khỏe eDoctor qua điện thoại:</b>
+							<p><i class="fa fa-phone fa-lg"></i> Tổng đài: <a style="font-size:22px;" href="tel:18006115"><strong>18006115</strong></a> (nhánh số <strong style="font-size:22px;">0</strong>) - <i class="fa fa-phone fa-lg"></i> Điện thoại: <a style="font-size:22px;" href="tel:0903 492 113"><strong>0903 492 113</strong></a></p>
+						</div>
+					</div>
+
+					<div class="col-md-12">
+						<h2 class="element_from_bottom">Nhiều ưu đãi lớn cho các Mẹ bầu</h2>
+						<div class="col-md-8">
+							<div class="row">
+								<div class="pink-note">
+									<strong style="font-size:16px; font-family:Roboto;">Sử dụng eDoctor các mẹ nhận được nhiều ưu đã lớn khi</strong> <br /> <br />
+									<ul style="margin:0;">
+										<li><i class="fa fa-check"></i> Khám bệnh tại các bệnh viện và phòng khám tư nhân mà edoctor hợp tác</li>
+										<li><i class="fa fa-check"></i> <a href="http://edoctor.vn/dich-vu-tu-van-cham-soc-suc-khoe.htm"><strong>Chăm sóc sức khỏe</strong></a> tại nhà (tắm cho bé, tiêm, truyền nước…)</li>
+										<li><i class="fa fa-check"></i> Làm đẹp tại các trung tâm thẩm mỹ, các trung tâm Fitness</li>
+										<li><i class="fa fa-check"></i> Được sử dụng các sản phẩm phầm mềm ứng dụng chăm sóc sức khỏe, thông tin y tế hiện đại trên điện thoại smartphone</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="row">
+								<img style="float:right; margin-right:20%;" src="/upload/images/cham-soc-suc-khoe-ba-bau.png" alt="cham soc suc khoe ba bau">
+							</div>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Purchase -->
+		<div style="margin-top:0;" class="purchase">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 purchase-button element_from_right">
+						<a onclick="_gaq.push(['_trackEvent', 'Click', 'CSBB Mua the qua anh', 'CSBB Mua the']);" href="http://edoctor.vn/onepage.htm" title="Đăng ký sử dụng miễn phí 24h đầu tiên và mua thẻ eDoctor">
+							<img src="http://edoctor.vn/layouts/affiliate_landing/img/the-tu-van-cham-soc-suc-khoe-edoctor.png" alt="the cham soc suc khoe edoctor">
+						</a>
+					</div>
+					<div class="col-md-9">
+						<h3><i class="fa fa-hand-o-right"></i> Đặt mua thẻ eDoctor</h3>
+						<p style="font-size:18px;">Qúy khách có thể đặt mua thẻ eDoctor online theo mẫu dưới hoặc gọi đến số hotline <strong>0903 492 113</strong></p>
+						<br />
+						<div class="contact-form" id="contact-form3">
+							<form action="/ajax/muathe" method="POST" accept-charset="utf-8">
+								<div style="float:left;width:280px;">
+									<input type="text" name="fullname" id="fullname" value="" placeholder="Tên của bạn"> <br />
+									<input type="text" name="mobile" id="mobile" value="" placeholder="Số điện thoại" maxlength="12" onkeypress="return isNumberKey(event);"> <br />
+									<input type="text" name="address" id="address" value="" placeholder="Địa chỉ giao thẻ"> 
+								</div>
+								<div class="clear"></div>
+								<textarea placeholder="Số lượng thẻ và thông tin bổ sung..." name="" id='content'></textarea>
+								<div class="clear"></div>
+								<input type="button" style="float:left; font-weight:bold; font-size:16px; font-family:'Roboto';" class="btn-cam" onclick="btn_muathe('contact-form3');" value="ĐẶT MUA THẺ">
+								<div class="clear"></div>
+								<div id="notification"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Purchase end -->

@@ -1,0 +1,129 @@
+<?php $list = $this->list;?>
+	<h1 class="full" id="page-title"><strong>Gửi câu hỏi cho bác sỹ eDoctor</strong></h1>
+	<div class="clear"></div>
+	</div><!--end rwidth head post-->
+</div>
+<!--end head post-->
+	<div class="padding">
+		<div class="khuongnt_content services full">
+			<div class="rwidth">
+				<div class="col col700 the_content">
+					<h2 style="margin-top:0;"><strong>Bạn đang có những thắc mắc về sức khoẻ?</strong></h2>
+					<p>Hãy điền đầy đủ thông tin và câu hỏi theo mẫu bên dưới, eDoctor sẽ tiếp nhận vào xử lý các câu hỏi của bạn trong thời gian sớm nhất.</p>
+					<?php if(!isset($_GET['success'])): ?>
+					<div class="qa-form full">
+						<form id="qa_form" action="" method="post" accept-charset="utf-8">
+							<input id="qa_name" type="text" name="qa_name" placeholder="Họ và tên" value="<?php echo $this->qa_name; ?>">
+							<input id="qa_address" type="text" name="qa_address" placeholder="Địa chỉ" value="<?php echo $this->qa_address; ?>">
+							<input id="qa_phone" type="tel" name="qa_phone" placeholder="Số điện thoại" onkeypress="return isNumberKey(this);" maxlength="11" value="<?php echo $this->qa_phone; ?>">
+							<input id="qa_email" type="email" name="qa_email" placeholder="Địa chỉ Email" value="<?php echo $this->qa_email; ?>">
+							<span style="font-size:11px; color:#999; margin-bottom:10px; float:left; width:100%;">Hãy điền chính xác thông tin để eDoctor thông báo cho bạn khi có câu trả lời!</span>
+		                    <textarea id="qa_content" placeholder="Nội dung câu hỏi câu hỏi" name="qa_content"><?php echo $this->qa_content; ?></textarea>
+		                    <div class="full">
+		                    	<input id="qa_submit" type="submit" class="m-btn" value="Gửi câu hỏi"/>
+		                    </div>
+						</form>
+						<div style="color:red;" id="qa_noti">
+							<?php 
+								if(isset($this->error)) echo $this->error;
+							?>
+						</div>
+					</div>
+					<?php else: ?>
+					<div style="margin-top:10px;" class="success">
+						<p><strong>Câu hỏi của bạn đã được gửi đi thành công!</strong> <br />
+						Để có câu trả lời ngay lập tức hãy gọi về số <strong>18006115</strong>  (miễn phí cước gọi - miễn phí dùng thử 24h đầu) hỏi trực tiếp các bác sỹ của eDoctor.</p>
+					</div>
+					<?php endif; ?>
+					<div class="full">
+						<div class="success">
+							<a href="/giai-dap-thac-mac-suc-khoe.html" title=""><i class="fa fa-check-circle-o"></i> Thắc mắc sức khoẻ đã có câu trả lời từ bác sỹ eDoctor</a>
+						</div>
+						<div class="warning2">
+							<a href="/thac-mac-suc-khoe-cho-tra-loi.html" title=""><i class="fa fa-clock-o"></i> Thắc mắc sức khoẻ đang chờ bác sỹ eDoctor trả lời</a>
+						</div>
+						
+					</div>
+					<div class="full">
+						<h2><strong>Các tư vấn từ bác sỹ của eDoctor</strong></h2>
+						<ul class="list-cauhoi">
+							<?php if(isset($this->qaList)):
+							$count = 0;
+							foreach ($this->qaList as $key => $qaLists):
+								$count++; 
+								$phone = str_replace(substr($qaLists['qa_phone'], -4, 4), '****', $qaLists['qa_phone']);
+							?>
+							<li>
+	                           <div class="qa_quest full">
+	                            	<h3><i class="fa fa-question-circle"></i> Bạn <?php echo $qaLists['qa_name']; ?> hỏi</h3> 
+	                            	<span class="qa_meta"><?php if($phone) { ?><?php echo $phone; ?> - <?php } ?><?php echo date("d-m-Y H:i", $qaLists['qa_time']); ?></span>
+		                            <div class="content_quest full">
+		                            	<p><?php echo $qaLists['qa_content'];?></p>
+		                            	<a class="more_quest" href="#" title="">Xem thêm <i class="fa fa-chevron-down"></i></a>
+		                            </div>
+	                            </div>
+	                            <div class="qa_answer full"> 
+	                            	<div class="content-answer">
+	                            		<h4><i class="fa fa-comments-o"></i> Trả lời từ bác sỹ eDoctor</h4>
+	                            		<div class="container_answer">
+	                            			<?php echo $qaLists['qa_answer'];?>
+	                            		</div>
+	                            		<a class="more_answer" href="#" title="">Xem thêm <i class="fa fa-chevron-down"></i></a>
+	                            	</div>
+	                            </div>
+							</li>
+							<?php endforeach; endif; ?>
+						</ul>
+						<div class="clear"></div>
+						<a style="margin-bottom:20px;" class="m-btn" href="/giai-dap-thac-mac-suc-khoe.html" title=""><i class="fa fa-arrow-circle-o-right"></i> Xem tất cả các tư vấn của bác sỹ eDoctor</a>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</article>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$('.content_quest > p').each(function() {
+			if($(this).height() > 120) {
+				$(this).css('height', '120px');
+			} else {
+				$(this).next('a').hide();
+			}
+		});
+		$('.container_answer').each(function() {
+			if($(this).height() > 135) {
+				$(this).css('height', '135px');
+			} else {
+				$(this).next('a').hide();
+			}
+		});
+		$('.more_quest').click(function() {
+			if($(this).hasClass('active')) {
+				$(this).prev('p').css('height', '120px');
+				$(this).removeClass('active');
+				$(this).html('Xem thêm <i class="fa fa-chevron-down"></i>')
+			} else {
+				$(this).prev('p').css('height', 'auto');
+				$(this).addClass('active');
+				$(this).html('Thu gọn <i class="fa fa-chevron-up"></i>');
+			}
+			return false;
+		});
+		$('.more_answer').click(function() {
+			if($(this).hasClass('active')) {
+				$(this).prev('div').css('height', '140px');
+				$(this).removeClass('active');
+				$(this).html('Xem thêm <i class="fa fa-chevron-down"></i>')
+			} else {
+				$(this).prev('div').css('height', 'auto');
+				$(this).addClass('active');
+				$(this).html('Thu gọn <i class="fa fa-chevron-up"></i>');
+			}
+			return false;
+		});
+	});
+</script>

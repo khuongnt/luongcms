@@ -1,0 +1,27 @@
+<?php ?>
+<!-- ARTICLE -->
+<div id="article" class="curvyRedraw">
+    <div class="padding ">
+        <div class="c-success">
+            <h1>Cảm ơn bạn đã mua hàng tại eDoctor.vn !</h1>
+            <p class="b-success__number">
+                <span class="b-success__order-text">- Mã số đơn hàng của bạn:</span>
+                <span class="b-success__order-number"><b><?php echo $this->code; ?></b></span>
+            </p>
+            <p class="b-success__number">
+                <span class="b-success__order-text">- Chúng tôi sẽ liên hệ với quý khách hàng trong 24h tới để xác nhận thông tin và thời gian chuyển thẻ eDoctor.</span>
+            </p>
+            <p class="b-success__number">
+                <span class="b-success__order-text">- Thông tin chi tiết về đơn hàng đã được <strong>gửi đến địa chỉ mail </strong><span class="b-success__email"><?php echo $this->email ?></span>. Bạn vui lòng kiểm tra hộp thư, nếu không tìm thấy vui lòng tìm thêm trong hộp thư Spam hoặc Junk Folder.</span>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- END ARTICLE -->
+<!-- SIDEBAR --> 
+<div id="sidebar">
+    <div class="widget did-you-know cycle cycle-diy">
+        <?php echo $this->render('right.phtml'); ?>
+    </div>
+</div>
+<!-- END SIDEBAR --> 

@@ -1,0 +1,106 @@
+<?php
+$error = empty($this->error) ? '' : $this->error;
+$payment_method = $this->payment_method;
+?>
+<h1 style="margin-top:0 !important;" class="title-bg"><strong>Hình thức thanh toán</strong></h1>
+<!-- ARTICLE -->
+<div id="cartOder" class="curvyRedraw">
+    <div id="widget">
+        <fieldset>
+            <form class="form-horizontal" action="" method="POST" style="margin-top: 20px;">
+                <?php if ($error): ?>
+                    <div class="alert alert-error" style="width: 80%; margin: 0 auto 10px;">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <?php echo $error; ?>
+                    </div>
+                <?php endif; ?>
+                <h2 class="title-cart"><i class="fa fa-hand-o-down fa-lg"></i> Chọn hình thức thanh toán</h2>
+                <div class="control-group">
+                    <div class="radio">
+                        <input type="radio" name="phuongthuc" id="tienmat" value="1" <?php if ($payment_method == 1 || $payment_method == 0) echo 'checked = "checked"'; ?>> Thanh toán tiền mặt khi nhận hàng
+                    </div>
+                </div>
+               
+                <div class="control-group">
+                    <div class="radio">
+                        <input type="radio" name="phuongthuc" id="bank" value="2" <?php if ($payment_method == 2) echo 'checked = "checked"'; ?>> Chuyển khoản qua ngân hàng
+                    </div>
+                </div>
+                <div class="control-group hide phuongthuc" id="bankInfo">
+                    <table style="width: 90%; margin-left: 5%">
+                        <tr style="height: 30px">
+                            <td colspan="3">
+                                <b><i class="fa fa-hand-o-down fa-lg"></i> Quý khách vui lòng chuyển khoản đến một trong các tài khoản sau:</b>
+                            </td>
+                        </tr>
+                        <tr style="height: 60px">
+                            <td><img class="logo_bank" alt="vietcombank" src="/layouts/default/img/Bank-Icons-01.jpg" /></td>
+                            <td>
+                                <h3 class="green_vcb">Ngân hàng thương mại cổ phần Ngoại thương Việt Nam - Vietcombank</h3>
+                                <p><strong>STK: 0021000301199</strong></p>
+                                <p><span>Công ty Cổ phần E.D.O.C.T.O.R</span></p>
+                            </td>
+                        </tr>
+
+                        <tr style="height: 60px">
+                            <td><img class="logo_bank" alt="dong a bank" src="/layouts/default/img/Bank-Icons-08.jpg" /></td>
+                            <td>
+                                <h3 class="blue_danga">Ngân hàng Đông Á</h3>
+                                <p><strong>STK: 012894650002</strong></p>
+                                <p><span>Công ty Cổ phần E.D.O.C.T.O.R</span></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="radio">
+                        <input type="radio" name="phuongthuc" id="nganluong" value="3" <?php if ($payment_method == 3) echo 'checked = "checked"'; ?>> Thanh toán qua ngân lượng
+                    </div>
+                </div>
+                <div class="control-group hide phuongthuc" id="nganluongInfo">
+                    <div style="margin-left: 20px;">
+                        <p class="warning"><i class="fa fa-hand-o-right"></i> Bạn cần chắc chắn nhập đúng số điện thoại và email để nhận mã PIN.</p>
+                        </br>
+                        <p class="success"><i class="fa fa-hand-o-right"></i> Bấm tiếp tục để tiến hành thanh toán qua Ngân Lượng.</p>	
+                    </div>
+                </div>
+
+                <div class="control-group" style="margin-top: 20px;">
+                    <div class="controls">
+                        <button type="submit" class="btn-cam" id="step1"><i class="fa fa-check-square-o"></i> Tiếp tục thanh toán</button>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</div>
+<!-- END ARTICLE -->
+<!-- SIDEBAR --> 
+<div id="sidebar">
+    <?php
+    if ($_SESSION['info']) {
+        echo $this->render('info.phtml');
+    }
+    ?>
+    <?php echo $this->render('giohang.phtml'); ?>
+</div>
+<!-- END SIDEBAR --> 
+<link rel="stylesheet" media="all" href="/layouts/default/css/vi_style_v3.css" type="text/css">

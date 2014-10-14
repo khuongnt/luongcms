@@ -1,0 +1,113 @@
+<div class="col-660">
+  	<h1 class="post-title full"><?php echo $this->post['title']; ?></h1>
+  	<div class="post-info full">
+    	<div class="date">Thứ 7, 27/09/2014</div>
+    	<div class="bread">
+			<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="/" class="home">Trang chủ</a></span> » <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" title="<?php echo $this->cat['name']; ?>" href="/tin-tuc/<?php echo $this->cat['slug']; ?>" class="taxonomy category"><?php echo $this->cat['name']; ?></a></span> » <span typeof="v:Breadcrumb"><span property="v:title"><?php echo $this->post['title']; ?></span></span>        
+		</div>
+  	</div>
+	<div class="post-content full">
+		<div class="single-excerpt"><span class="tsk">Tuầnsựkiện</span>
+		<p><?php echo $this->post['excerpt']; ?></p>
+		</div>
+		<?php 
+	  	$top3_post = $this->top3_post;
+	  	if(!empty($top3_post)): 
+	  		echo '<ul class="re_list">';
+	  		foreach ($top3_post as $top3) {
+	  			$link = '/'.$top3['slug'].'.html';
+	  			echo '<li><a href="'.$link.'" title="">'.$top3['title'].'</a></li>';
+	  		}
+	  	echo '</ul>';
+	  	endif;
+	  	?>
+      	<div class="clear"></div>
+       	<div class="content">
+       		<?php echo $this->post['content']; ?>
+       	</div>
+       	<!--end content-->
+  	</div>
+  	<?php  ?>
+  	<?php if(!empty($this->tags)):  $tags = $this->tags; ?>
+    <div class="tags full">
+        <strong>Xem thêm: </strong> 
+        <?php 
+		$last_key = end(array_keys($tags));
+        foreach ($tags as $key => $tag) {
+        	if($key == $last_key){
+        		echo '<a href="/tu-khoa/'.$tag['slug'].'" title="">'.$tag['name'].'</a>';
+        	} else {
+        		echo '<a href="/tu-khoa/'.$tag['slug'].'" title="">'.$tag['name'].'</a>, ';
+        	}
+        } ?>
+    </div>
+  	<?php endif; ?>
+    <div class="post-comments full">
+        <h3 id="post-comments">Bình luận về bài viết</h3>
+       <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid" data-href="http://tuansukien.vn/nokia-lumia-830-co-gia-799-trieu-dong.html" data-width="100%" data-numposts="10" data-colorscheme="light" fb-xfbml-state="rendered"><span style="height: 160px; width: 660px;"><iframe id="f23302dbec" name="f3da7a44b" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="https://www.facebook.com/plugins/comments.php?api_key=&amp;channel_url=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FZEbdHPQfV3x.js%3Fversion%3D41%23cb%3Df1c87665fc%26domain%3Dtuansukien.vn%26origin%3Dhttp%253A%252F%252Ftuansukien.vn%252Ff1a8e595f8%26relation%3Dparent.parent&amp;colorscheme=light&amp;href=http%3A%2F%2Ftuansukien.vn%2Fnokia-lumia-830-co-gia-799-trieu-dong.html&amp;locale=vi_VN&amp;numposts=10&amp;sdk=joey&amp;skin=light&amp;width=100%25" style="border: none; overflow: hidden; height: 160px; width: 660px;"></iframe></span></div>
+    </div>  	
+  	<?php 
+  	if(!empty($this->related_post)):
+  		$related_post = $this->related_post; 
+  		$i = 1;
+  		$c = 0;
+  	?>
+	<div class="related-posts full">  
+	    <div class="title-related full">
+	    	<h3><a href="/tin-tuc/<?php echo $this->cat['slug']; ?>"><?php echo $this->cat['name']; ?></a></h3>
+	    	<span>khác có thể bạn quan tâm</span>
+	    </div>
+	    <?php foreach ($related_post as $related): 
+	    $link = '/'.$related['slug'].'.html';
+	    if($i < 5) {
+	    ?>
+	    <div class="re_item item<?php echo $i; ?>">
+	      <a class="image-link medium-link" href="<?php echo $link; ?>" title="<?php echo $related['title']; ?>">
+	        <img width="180" height="128" src="<?php echo $related['thumb']; ?>" alt="<?php echo $related['title']; ?>">      </a>
+	      	<a class="re-title" href="http://tuansukien.vn/mo-xe-iphone-6-phien-ban-dat-nhat-tai-viet-nam-2.html" title="<?php echo $related['title']; ?>">
+	        <?php echo $related['title']; ?>
+	    	</a> 
+	      </div>
+	    <?php if($i == 5) echo '<div class="clear"></div>'; ?>
+	    <?php } else{ ?>            
+	    <?php $c++; ?> 
+	    <a class="relist <?php if($c % 2 ==0) echo 'listc'; ?>" href="<?php echo $link; ?>" title="<?php echo $related['title']; ?>">
+	    	<?php echo $related['title']; ?>
+	    </a> 
+	    <?php } ?>
+	<?php 
+	$i++;
+	endforeach;
+	echo '</div>';
+	endif; ?>
+</div>
+<div class="col-280">
+	<div class="widget-sidebar">			
+		<div class="textwidget"><img src="http://tuansukien.vn/wp-content/uploads/2014/09/280x320.png"></div>
+	</div>
+	<div class="clear"></div>
+	<div class="widget-sidebar">
+		<h3><span>Sự kiện nổi bật 24h qua</span></h3>
+		<div class="clear"></div>				
+	</div>
+	<div class="clear"></div>
+	<div class="widget-sidebar">
+		<h3><span>Xem nhiều nhất</span></h3>
+		<div class="clear"></div>			
+	</div>
+	<div class="clear"></div>
+	<div class="widget-sidebar">			
+		<div class="textwidget"><img src="http://tuansukien.vn/wp-content/uploads/2014/09/280x320.png"></div>
+	</div>
+	<div class="clear"></div>
+	<div class="widget-sidebar">
+		<h3><span><a href="http://tuansukien.vn/tin-tuc/phap-luat">Dư luận đang quan tâm</a></span></h3>
+		<div class="clear"></div>	
+	</div>
+	<div class="clear"></div>
+	<div class="widget-sidebar">
+		<h3><span><a href="http://tuansukien.vn/tin-tuc/phap-luat">Tin pháp luật</a></span></h3>
+		<div class="clear"></div>		
+	</div>
+	<div class="clear"></div>
+</div>

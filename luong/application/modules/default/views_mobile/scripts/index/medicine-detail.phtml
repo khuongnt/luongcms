@@ -1,0 +1,69 @@
+<?php 
+$row 		= $this->row;
+$listLQ  	= $this->listLQ;
+?>
+<h1 id="page-title">Thuốc <?php echo $row->med_name?></h1>
+<br />
+<div id="article" class="thuoc-content">
+	<p>
+		<i><?php echo $row->med_intro?></i>
+	</p>
+	<?php if($row->med_cachsudung) :?>
+	<p><a class="m-btn show_thuoc" href="#cachsudung" title=""><i class="fa fa-chevron-down"></i> Cách sử dụng thuốc <?php echo $row->med_name?></a></p>
+	<p id="cachsudung" style="display:none;"><?php echo $row->med_cachsudung?></p>
+	<?php endif;?>
+	
+	<?php if($row->med_chidinh) :?>
+	<p><a class="m-btn show_thuoc" href="#chidinh" title=""><i class="fa fa-chevron-down"></i> Chỉ định của thuốc <?php echo $row->med_name?></a></p>
+	<p style="display:none;" id="chidinh"><?php echo $row->med_chidinh?></p>
+	<?php endif;?>
+	
+	<?php if($row->med_chongchidinh) :?>
+	<p><a class="m-btn show_thuoc" href="#chongchidinh" title=""><i class="fa fa-chevron-down"></i> Chống chỉ định đối với thuốc <?php echo $row->med_name?></a></p>
+	<p style="display:none;" id="chongchidinh"><?php echo $row->med_chongchidinh?></p>
+	<?php endif;?>
+	
+	<?php if($row->med_phanungphu) :?>
+	<p><a class="m-btn show_thuoc" href="#phanungphu" title=""><i class="fa fa-chevron-down"></i> Phản ứng phụ của thuốc <?php echo $row->med_name?></a></p>
+	<p style="display:none;" id="phanungphu"><?php echo $row->med_phanungphu?></p>
+	<?php endif;?>
+	
+	<?php if($row->med_thanhphan) :?>
+	<p><a class="m-btn show_thuoc" href="#thanhphan" title=""><i class="fa fa-chevron-down"></i> Thành phần thuốc <?php echo $row->med_name?></a></p>
+	<p style="display:none;" id="thanhphan"><?php echo $row->med_thanhphan?></p>
+	<?php endif;?>
+	<?php if($row->med_trinhbaydonggoi) :?>
+	<p><a class="m-btn show_thuoc" href="#trinhbaydonggoi" title=""><i class="fa fa-chevron-down"></i> Trình bày đóng gói thuốc <?php echo $row->med_name?></a></p>
+	<p style="display:none;" id="trinhbaydonggoi"><?php echo $row->med_trinhbaydonggoi?></p>
+	<?php endif;?>
+	<?php if($row->med_desc) :?>
+	<p><a class="m-btn show_thuoc" href="#med_des" title=""><i class="fa fa-chevron-down"></i> Mô tả chung về thuốc <?php echo $row->med_name?></a></p>
+	<div style="display:none;" id="med_des" class="note"><?php echo $row->med_desc?></div>
+	<?php endif;?>
+</div>
+<div class="muathe">
+	<a class="btn-cam" href="/onepage.htm" title="Mua thẻ eDoctor">Mua thẻ eDoctor</a>
+	<div class="clear"></div>
+</div>
+<br />
+<div style="text-align:justify;" class="thumbs-up">
+	<p>Hãy gọi ngay <strong>18006115</strong> để miễn phí dùng thử dịch vụ tư vấn, chăm sóc sức khỏe của eDoctor trong 24h đầu. Hoặc mua thẻ eDoctor với chính sách <strong>hoàn lại 100% giá trị</strong> thẻ nếu khách hàng không muốn tiếp tục sử dụng dịch vụ của eDoctor trong <strong>30 ngày đầu tiên</strong>.</p>
+</div>
+<br>
+<div id="sidebar">
+	<h4 class="widget-title"><a class="m-btn show_thuoc" href=".list-thuoc" title=""><i class="fa fa-chevron-down"></i> Thuốc cùng nhóm với thuốc <?php echo $row->med_name?></a></h4>
+	<br />
+	<div class="list-thuoc">
+	<?php 
+	$i=1;
+	foreach ($listLQ AS $item):
+	$link = "/thuoc/".$item->med_seo.".htm";
+	?>
+		<div class="item-thuoc">
+			<a href="<?php Echo $link?>" class="sdiseases dc">Thuốc <?php echo $item->med_name?></a>
+		</div>
+	<?php 
+	$i++;
+	endforeach;?>
+	</div>
+</div>

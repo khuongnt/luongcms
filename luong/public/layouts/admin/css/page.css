@@ -1,0 +1,316 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+    -webkit-text-shadow: 1px 1px 1px #fff;
+    -moz-text-shadow: 1px 1px 1px #fff;
+    -ms-text-shadow: 1px 1px 1px #fff;
+	font:400 12px arial;
+	background:url("/layouts/admin/images/bg_body.gif") no-repeat center top #fff;
+}
+
+#wrapper_content_home_default {
+    margin: 0px auto;
+    width: 98%;
+	min-width: 980px;
+    float: none;
+    position: relative;
+    z-index: 10;
+}
+#wrapper_content_home_default .menu_top .list_menu li.name_user a, .menu_top .list_menu li.end_li a {
+    padding: 0 5px;
+    margin: 0px;
+}
+#wrapper_content_home_default .menu_top .list_menu li.name_user a {
+    border-right: 1px solid #cbcbcb;
+}
+#wrapper_content_home_default .menu_top .list_menu li a b {
+    text-decoration: underline;
+}
+
+#wrapper_content_home_default .menu_top .list_menu li a:hover {
+    color: #464646;
+}
+
+#wrapper_content_home_default .menu_top .list_menu li span {
+    display: inline-block;
+    float: left;
+}
+#wrapper_content_home_default .menu_top .list_menu li a {
+    text-transform: none;
+    height: auto;
+}
+#wrapper_content_home_default .menu_top .list_menu li.name_user a {
+    float: left;
+    padding-left: 6px;
+    line-height: 15px;
+    color: #0d559a;
+    font-weight: bold;
+}
+#wrapper_content_home_default .list_menu li {
+    margin: 0 0 0 20px;
+}
+
+.block_content {
+    margin: 10px 0px 20px 0px;
+}
+#col_left {
+    min-width: 190px;
+	margin-right: 10px;
+	width: 18%;
+}
+#col_right {
+    float: right;
+	width: 77%;
+	background: #fff;
+	border: 1px solid #d1d1d1;
+	padding-bottom: 10px;
+	min-height: 690px;
+	border-radius: 5px;
+}
+.box_common {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+}
+.list_infor_accout li {
+    border-bottom: 1px solid #d9d9d9;
+    padding: 1px 0px;
+}
+.list_infor_accout li.last {
+	border-bottom: none !important;
+	padding: 1px 0px;
+}
+.list_infor_accout li.end_li {
+    border: none;
+}
+.list_infor_accout li a {
+    display: block;
+    padding: 7px 0px 7px 5px;
+    font: 700 11px arial;
+}
+.list_infor_accout li a:hover, .list_infor_accout li.active a {
+    color: #464646;
+    text-decoration: none;
+    background: #e3e3e3;
+}
+
+.option_view .user_name li {
+    float: left;
+    position: relative;
+}
+
+.option_view .user_name li a, .option_view .user_name li span {
+    font: 500 12px arial;
+}
+
+.option_view .user_name li span {
+    padding-right: 7px;
+}
+
+.option_view .user_name li.end_li a {
+    color: #464646;
+}
+
+.link_navi {
+    margin: 10px 0 0 0;
+    width: 500px;
+}
+
+.link_navi ul li {
+    float: left;
+}
+
+.list_link_navi li:last-child{
+	margin-top: 0px;	
+}
+
+.link_navi ul li a {
+    font: 500 12px arial;
+    color: #0d559a;
+    float: left;
+}
+
+.link_navi ul li span {
+    display: block;
+    width: 7px;
+    height: 7px;
+    background: url(/layouts/admin/images/bg_link_navi.png) no-repeat top center;
+    padding: 0px 5px;
+    float: left;
+    margin-top: 4px;
+}
+
+.link_navi ul li.end_li a {
+    color: #464646;
+}
+
+.list_infor_accout .list_submenu {
+    padding-left: 6px;
+    border-top: 1px solid #D9D9D9;
+    margin-top: 1px;
+}
+
+.list_infor_accout .list_submenu li a {
+    font: 500 12px arial;
+    padding: 4px 0px 4px 7px;
+    
+}
+
+.list_infor_accout .list_submenu li a:hover {
+    font-weight: bold;
+}
+
+.list_infor_accout .list_submenu li a.active {
+    font-weight: bold;
+    color: #000;
+}
+
+.list_infor_accout .list_submenu li {
+    padding-left: 0px;
+}
+.header_right_col .view_nhanh ul.list_date_view li a {
+    font: 500 12px arial;
+    color: #0d559a;
+    padding: 3px 0px;
+}
+
+.header_right_col .view_nhanh ul.list_date_view li a:hover, .header_right_col .view_nhanh ul.list_date_view li.active a {
+    font: 700 11px arial;
+    color: #464646;
+}
+
+/*--------20/08---------*/
+.option_view ul {
+    float: left;
+    margin-top: 8px;
+}
+/*----------------24/08-------*/
+.login_succe {
+    border-left: 1px solid #c4c4c4;
+    border-right: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    position: absolute;
+    top: 28px;
+    right: 0px;
+    z-index: 999;
+    width: 190px;
+    background: #ebebeb;
+    display: none;
+	margin-top: -1px;
+}
+
+.option_view .user_login_succ span {
+    background: url(/layouts/admin/images/muiten_down.gif) no-repeat 8px 6px;
+    padding: 0 7px 5px 9px;
+    border-top: 1px solid #efefef;
+    border-left: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    position: absolute;
+    right: 0px;
+    top: 1px;
+    display: block;
+}
+
+.login_succe ul li.first_li {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.option_view .login_succe ul li {
+    float: none;
+    display: block;
+    width: 100%;
+}
+
+.option_view .user_login_succ .login_succe a {
+    font: 700 11px arial;
+    color: #545553;
+    float: none;
+    border: none;
+    display: block;
+    padding: 4px 0;
+    *padding: 2px 0;
+}
+
+.login_succe ul {
+    padding: 0px 10px;
+    width: 170px;
+}
+
+.login_succe ul li.end_li {
+    border-top: 1px solid #d6d6d6;
+    margin-bottom: 5px;
+}
+
+
+.option_view .user_name li.last-child:hover span {
+    background: #ebebeb url(/layouts/admin/images/muiten_down.gif) no-repeat 8px 6px;
+    text-decoration: none;
+    border: 1px solid #d6d6d6;
+    padding: 0px 7px 12px 9px;
+    border-bottom: none;
+}
+
+.user_name li.last-child:hover .login_succe {
+    display: block;
+}
+
+.option_view .user_name li.last-child {
+    padding: 0 26px 17px 0;
+}
+
+.option_view .user_login_succ .login_succe ul li a:hover {
+    text-decoration: none;
+    color: #dc2727;
+}
+
+.pagination li.page-number {
+    display: block;
+    margin-top: 2px;
+    border: 1px solid transparent;
+    -webkit-transition: background 500ms ease-in-out;
+    -moz-transition: background 500ms ease-in-out;
+    -o-transition: background 500ms ease-in-out;
+    -ms-transition: background 500ms ease-in-out;
+    transition: background 500ms ease-in-out;
+    border-radius: 4px;
+}
+
+.pagination li.page-number a {
+    color: black;
+    width: 100%;
+    padding: 4px 5px;
+    display: block;
+}
+
+.pagination li.page-number.active, .pagination li.page-number:hover {
+    background: #F2F2F2;
+    border-color: gray;
+}
+
+.pagination li.page-number.active a {
+    font-weight: bold;
+}
+
+/*--------------31/08*/
+#breadcrumbs li.home a {
+    display: block;
+    padding-left: 20px;    
+    height: 14px;
+    background: url(/layouts/admin/images/icon_home.png) no-repeat top left;
+}
+
+.top_menu_page .menu_top .sub_menu {
+    top: 14px;
+}
+a.small_link {
+    font: 500 12px arial;
+    margin: 5px 5px 0 0;
+}
+
+.menu_top .active{
+	border: 1px solid blue;
+    color: red;	
+}

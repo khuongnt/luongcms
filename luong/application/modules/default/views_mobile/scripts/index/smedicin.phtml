@@ -1,0 +1,57 @@
+<?php 
+$data = $this->data;
+$listCat = $this->listCat;
+$list = $this->list;
+ ?>
+<h1 id="page-title">Tra cứu thuốc A - Z</h1>
+<br />
+<div id="article" class="curvyRedraw">
+	<div class="result-search">
+		<div class="action-from-search">
+			<a class="btn-cam" href="/mua-the.html" title="Mua thẻ eDoctor">Mua thẻ eDoctor</a>
+		</div>
+		<div id="rsSearch">
+			<?php 
+			$i = 1;
+			foreach ($list AS $item):
+			$link = '/thuoc/'.$item->med_seo.'.htm';
+			?>
+				<div class="item-search <?php if($i%2==0) echo "odd"; else echo "even"?>"><a href="<?php echo $link?>" class="help"><i class="fa fa-angle-right"></i> <?php Echo $item->med_name?></a></div>
+			<?php 
+			$i++;
+			endforeach;
+			?>
+		</div>
+		<div id="sidebar">
+			<div style="margin-right:10px;" class="widget sidenav">
+				<br>
+				<a class="m-btn" href="tel:18006115"><i class="fa fa-phone"></i> 18006115 (miến phí)</a>
+				<br>
+				<a class="m-btn" href="/tra-cuu-benh.htm">Tra cứu bệnh</a>
+				<br />
+				<a class="m-btn active" href="/tra-cuu-thuoc.htm">Tra cứu thuốc</a>
+			</div>
+		</div>
+	</div>
+	<div class="alpha-bet">
+		<span class="mf" rel="A">A</span>
+		<span class="mf" rel="B">B</span>
+		<span class="mf" rel="C">C</span>
+		<span class="mf" rel="D">D</span>
+		<span class="mf" rel="E">E</span>
+		<span class="mf" rel="F">F</span>
+		<span class="mf" rel="G">G</span>
+		<span class="mf" rel="H">H</span>
+		<span class="mf" rel="I">I</span>
+		<span class="mf" rel="L">L</span>
+		<span class="mf" rel="M">M</span>
+		<span class="mf" rel="N">N</span>
+		<span class="mf" rel="O">O</span>
+		<span class="mf" rel="P">P</span>
+		<span class="mf" rel="S">S</span>
+		<span class="mf" rel="T">T</span>
+		<span class="mf" rel="V">V</span>
+		<span class="mf" rel="Z">Z</span>
+	</div>
+</div>
+<div class="clear"></div>

@@ -1,0 +1,19 @@
+<form class="box login" method="post" action="/admin/login.html">
+
+    <fieldset class="boxBody">
+        <?php if ($this->error) : ?>
+            <span style="color: red;">
+                <?php echo $this->error; ?>.
+            </span>
+        <?php endif; ?>
+        <label><span style="height: 20px;">Web Content Management System</span></label>
+        <input type="text" name="username" value=""  placeholder="Tên đăng nhập" required/>
+        <span></span>       
+        <input name="password" type="password" placeholder="Mật khẩu"/>
+        <label><a href="#" class="rLink" tabindex="5">Forget your password?</a></label>   
+    </fieldset>
+    <footer>
+        <label><input type="checkbox" />Keep me logged in</label>
+        <input type="submit" class="btnLogin" value="Login"/>
+    </footer>
+</form>

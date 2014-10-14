@@ -1,0 +1,131 @@
+<link rel="stylesheet" media="all" href="/layouts/default/css/cart.css" type="text/css">
+<!-- 		<link rel="stylesheet" media="all" href="/layouts/default/css/global2.css" type="text/css"> -->
+<div class="b-cart clearfix">
+	<div class="b-cart__content">
+		<div class="b-cart__content-box">
+			<h1 class="b-cart__title">
+				<i class="fa fa-shopping-cart i-cart"></i> Giỏ hàng của tôi<span class="b-cart__qty"></span>
+			</h1>
+			<p class="b-cart__add">
+				<!--Vừa được thêm vào-->
+				<i class="fa fa-check i-add" style="display: inline;"></i> <span class="b-cart__add-item" style="display: inline;">Bí Mật Của Cha đã được thêm vào giỏ hàng.</span>
+				<!-- Thông báo lỗi -->
+				<i class="fa fa-exclamation-circle i-err"></i> <span class="b-cart__add-item-err"></span>
+			</p>
+			<div class="cart-has-items">
+				<div class="b-cart__block-title clearfix">
+					<span class="b-cart__block-item">Sản phẩm</span> 
+					<span class="b-cart__block-price">Giá</span> 
+					<span class="b-cart__block-qty">Số lượng</span> 
+					<span class="b-cart__block-total-price">Tổng</span>
+				</div>
+
+				<form id="update-cartnew" method="post" onsubmit="return false;">
+					<ul class="b-cart__item-list">
+						<li id="li_5000615" class="b-cart__item">
+							<a href="#" target="_blank" class="b-cart__item-img"> 
+								<img src="/layouts/default/article/bi-mat-cua-cha.jpg" alt="Bí Mật Của Cha" title="Bí Mật Của Cha">
+							</a>
+
+							<div class="b-cart__item-box">
+								<div class="b-cart__item-detail">
+									<a href="#" target="_blank" title="Bí Mật Của Cha"> Bí Mật Của Cha </a>
+								</div>
+
+								<div class="b-cart__item-price">
+									<span class="b-cart__item-price-value"> <span class="price">73.000&nbsp;₫</span>
+									</span>
+								</div>
+
+								<div class="b-cart__item-qty">
+									<input id="input_5000615" type="text" name="cart[5000615][qty]" title="Số lượng" maxlength="2" class="b-cart__qty-input" value="4" data-item-id="5000615" data-old-qty="4" data-inventory="80" data-is-dropship="0" data-backorders="0">
+									<a class="b-cart__item-qty-update" href="javascript:void(0)" title="Bỏ sản phẩm" data-id="5000615">Bỏ sản phẩm</a>
+								</div>
+
+								<div class="b-cart__item-price-total">
+									<span class="b-cart__item-price-value"> <span class="price">292.000&nbsp;₫</span>
+									</span>
+								</div>
+								<!--<p class="item-msg " style="width:365px">* </p>-->
+								<ul class="b-cart__attribute">
+									<div class="clearfix brand-box-cart">
+
+										<li class="b-cart__attribute-item">
+										<span class="b-cart__attribute-name"> Bìa Mềm - Tác giả: 
+											<b>Thierry Cohen</b>
+										</span >
+										</li>
+									</div>
+									<div id="item_error_5000615" class="b-cart__item-error" style="display: none;"></div>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<div class="b-cart__update">
+						<button class="b-cart__update-btt btt_normal"
+							id="b-cart__update-all">Cập Nhật Giỏ Hàng</button>
+					</div>
+				</form>
+
+				<div class="b-cart__summary clearfix">
+					<div class="b-cart__benefit clearfix">
+						<div class="b-cart__sale clearfix">
+							<!-- 
+							<div class="b-cart__xu">
+								<div class="rewards-box-spend-minicart b-cart__sale clearfix">
+									<h2 class="b-cart__xu-title">Giảm giá với Tiki Xu</h2>
+									<div class="box-content">
+										<span class="no_points_to_spend"> Vui lòng 
+											<a href="/customer/account/login">đăng nhập</a> để sử dụng Tiki Xu
+										</span>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="b-cart__coupon">
+								<h2 class="b-cart__coupon-title">Mã giảm giá / Quà tặng</h2>
+								<form id="discount-coupon-form" action="/checkout/cart/couponPostNew" method="post" onsubmit="return false;">
+									<div class="b-cart__coupon-box">
+										<input type="hidden" name="remove" id="remove-coupone" value="0"> 
+										<input type="text" id="coupon_code" class="b-cart__coupon-input" name="coupon_code" value="" placeholder="Nhập vào nếu có">
+										<button type="button" class="b-cart__coupon-btt btt_normal" onclick="submitCoupon(this, false);">Áp dụng</button>
+									</div>
+								</form>
+							</div>
+							 -->
+						</div>
+						
+						<div class="b-cart__give-xu"></div>
+						<div class="b-cart__continue">
+							<a class="b-cart__continue-link" href="javascript:void(0)" onclick="closeCart()" title="Tiếp Tục Mua Hàng" alt="Tiếp Tục Mua Hàng">
+						</div>
+					</div>
+
+					<div class="b-cart__total-price">
+						<ul class="b-cart__total-price-list">
+							<li class="b-cart__total-price-item b-cart__total-price_sub">
+								<span class="b-cart__total-price-name">Tổng cộng</span> 
+								<span class="b-cart__total-price-value"> 292.000&nbsp;₫ </span>
+							</li>
+
+							<li class="b-cart__total-price-item vb-cart__total-price_coupon">
+								<span class="b-cart__total-price-name">Phí vận chuyển</span> 
+								<span class="b-cart__total-price-value" style="color: red;"> Chưa có </span>
+							</li>
+							<!--<li class="b-cart__total-price-item b-cart__total-price_ship"><span class="b-cart__total-price-name">Phí vận chuyển</span><span class="b-cart__total-price-value">(Miễn phí)</span></li>-->
+							<li class="b-cart__total-price-item b-cart__total-price_final">
+							<span class="b-cart__total-price-name">THÀNH TIỀN</span> 
+							<span class="b-cart__total-price-value"> 292.000&nbsp;₫ </span> 
+						</ul>
+
+						<div class="b-cart__checkout">
+							<button class="b-cart__checkout-btt btn__add-to-cart" title="THỰC HIỆN THANH TOÁN"> THỰC HIỆN THANH TOÁN</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end b-cart__content-box -->
+	</div>
+</div>

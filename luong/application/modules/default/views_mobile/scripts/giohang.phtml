@@ -1,0 +1,38 @@
+<?php $list = $this->list;
+$total = 0;
+?>
+<div class="widget did-you-know cycle order cycle-diy">
+    <h4 class="widget-title-cart"><strong>Thông tin đơn hàng</strong></h4>
+    <div class="order_cart">
+        <div>
+            <?php
+            if (!empty($list)) :
+                foreach ($list AS $item):
+                    if (empty($_SESSION['cart'][$item->id])) {
+                        continue;
+                    }
+                    $item_qty = doubleval($_SESSION['cart'][$item->id]);
+                    $item_total = $item_qty * $item->price;
+                    $total += $item_total;
+                    ?>
+                    <div class="full">
+                        <div class="col-40 col"><?php echo $item->name; ?></div>
+                        <div class="col-20 col"><?php echo $item_qty; ?> (chiếc)</div>
+                        <div class="col-40 col"><?php echo number_format($item_total, 0, ',', '.'); ?> đ</div>
+                    </div>
+                    <?php
+                endforeach;
+                $_SESSION['info']['total'] = $total;
+            endif;
+            ?>
+            <div style="border-top:1px solid #eee;" class="full">
+                <div class="col-40 col"><span>Tổng cộng</span></div>
+                <div class="col-20 col"></div>
+                <div class="col-40 col"><strong class="red-price"><?php echo number_format($total, 0, ',', '.') ?> đ</strong></div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

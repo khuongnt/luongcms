@@ -1,0 +1,70 @@
+<?php 
+$row = $this->row;
+$listLQ = $this->listLQ;
+ ?>
+<h1 id="page-title">Bệnh <?php echo $row->dis_name?></h1>
+<br />
+<a class="m-btn" href="tel:18006115" title=""><i class="fa fa-phone"></i> 18006115 (miễn phí)</a>
+<br />
+<div id="article" class="thuoc-content">
+	<p>
+		<i><?php echo $row->dis_intro?></i>
+	</p>
+	<?php if($row->dis_dinhnghia) :?>
+	<p id="dinhnghia"><strong>Định nghĩa</strong></p>
+	<p><?php echo $row->dis_dinhnghia?></p>
+	<?php endif;?>
+	
+	<?php if($row->dis_trieuchung) :?>
+	<p><a class="m-btn show_thuoc" href="#trieutrung" title=""><i class="fa fa-chevron-down"></i> Triệu trứng của <?php echo $row->dis_name?></a></p>
+	<p id="trieutrung" style="display:none;"><?php echo $row->dis_trieuchung?></p>
+	<?php endif;?>
+	
+	<?php if($row->dis_nguyennhan) :?>
+	<p><a class="m-btn show_thuoc" href="#nguyennhan" title=""><i class="fa fa-chevron-down"></i> Nguyên nhân của <?php echo $row->dis_name?></a></p>
+	<p style="display:none;" id="nguyennhan"><?php echo $row->dis_nguyennhan?></p>
+	<?php endif;?>
+	
+	<?php if($row->dis_bienchung) :?>
+	<p><a class="m-btn show_thuoc" href="#bienchung" title=""><i class="fa fa-chevron-down"></i> Hệ quả của <?php echo $row->dis_name?></a></p>
+	<p id="bienchung" style="display:none;"><?php echo $row->dis_bienchung?></p>
+	<?php endif;?>
+	
+	<?php if($row->dis_phuongphap) :?>
+	<p><a class="m-btn show_thuoc" href="#phuongphap" title=""><i class="fa fa-chevron-down"></i> Phương pháp điều trị <?php echo $row->dis_name?></a></p>
+	<p id="phuongphap" style="display:none;"><?php echo $row->dis_phuongphap?></p>
+	<?php endif;?>
+	
+	<?php if($row->dis_phongtranh) :?>
+	<p><a class="m-btn show_thuoc" href="#phongtranh" title=""><i class="fa fa-chevron-down"></i> Cách phòng tránh <?php echo $row->dis_name?></a></p>
+	<p id="phongtranh" style="display:none;"><?php echo $row->dis_phongtranh?></p>
+	<?php endif;?>
+	<div><?php echo $row->dis_desc?></div>
+	<br />
+</div>
+<div class="muathe">
+	<a class="btn-cam" href="/onepage.htm" title="Mua thẻ eDoctor">Mua thẻ eDoctor</a>
+	<div class="clear"></div>
+</div>
+<br />
+<div style="text-align:justify;" class="thumbs-up">
+	<p>Hãy gọi ngay <strong>18006115</strong> để miễn phí dùng thử dịch vụ tư vấn, chăm sóc sức khỏe của eDoctor trong 24h đầu. Hoặc mua thẻ eDoctor với chính sách <strong>hoàn lại 100% giá trị</strong> thẻ nếu khách hàng không muốn tiếp tục sử dụng dịch vụ của eDoctor trong <strong>30 ngày đầu tiên</strong>.</p>
+</div>
+<br>
+<div id="sidebar">
+	<h4 class="widget-title"><a class="m-btn show_thuoc" href=".list-thuoc" title=""><i class="fa fa-chevron-down"></i> Bệnh cùng nhóm với <?php echo $row->dis_name?></a></h4>
+	<br />
+	<div class="list-thuoc">
+	<?php 
+	$i=1;
+	foreach ($listLQ AS $item):
+	$link = "/benh/".$item->dis_seo.".htm";
+	?>
+		<div class="item-thuoc">
+			<a href="<?php Echo $link?>" class="sdiseases dc"><?php echo $item->dis_name?></a>
+		</div>
+	<?php 
+	$i++;
+	endforeach;?>
+	</div>
+</div>

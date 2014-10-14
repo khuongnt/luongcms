@@ -1,0 +1,60 @@
+.clor_green {color: #0d559a;}
+.clor_gray_bold { color: #464646;}
+.clor_gray_nor { color: #464646;}
+.clor_gray_2 {color: #858585;}
+.clor_red {color: #cf0000;}
+.align-right {text-align: right !important}
+.align-center {text-align: center !important}
+.align-left {text-align: left !important}
+.clr {clear: both;}
+.w100 {width: 100% !important}
+.w95 {width: 95% !important}
+.w90 {width: 90% !important}
+.w85 {width: 85% !important}
+.w80 {width: 80% !important}
+.w75 {width: 75% !important}
+.w70 {width: 70% !important}
+.w65 {width: 65% !important}
+.w60 {width: 60% !important}
+.w55 {width: 55% !important}
+.w50 {width: 50% !important}
+.w45 {width: 45% !important}
+.w40 {width: 40% !important}
+.w35 {width: 35% !important}
+.w30 {width: 30% !important}
+.w25 {width: 25% !important}
+.w20 {width: 20% !important}
+.w15 {width: 15% !important}
+.w10 {width: 10% !important}
+.w5  {width: 5% !important}
+.span600 { width: 600px;}
+/*--Tooltip Styles--*/
+.tip {
+	color: #fff;
+	background:#1d1d1d;
+	display:none; /*--Hides by default--*/
+	padding:10px;
+	position:absolute;	z-index:1000;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.block_img {
+	margin: 10px;
+	width: 30%;
+	float: left;
+}
+.choice {
+	cursor: pointer;
+}
+.block_img .img {
+	width: 100px;
+	/*height: 50px;*/
+	border: 5px solid #FFF;
+}
+.block_img .action {
+	width: 16px;
+	height: 16px;
+	margin-left: 20px
+}

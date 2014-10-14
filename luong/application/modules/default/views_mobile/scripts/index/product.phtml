@@ -1,0 +1,62 @@
+<?php $row = $this->row;?>
+<div id="fullPage">
+	<div class="container product-box " style="margin: 10px 0px;">
+		<div class="span4 imgProduct">
+			<img alt="" src="/layouts/default/img/the-mot-thang.png" width="300" style="border: 1px solid #000;">
+			<div class="item-select-box">
+					<div class="step-box clearfix" style="padding-left:0;">
+						<div class="select-qty" style="margin:0">
+							<span class="bgArrowQty">
+								<input id="qty" type="text" name="qty" class="tbQty qty-input" value="1">
+								<span class="arrowBlock">
+									<a href="javascript://" class="upQty"></a>
+									<a href="javascript://" class="downQty"></a>
+								</span>
+							</span>
+						</div>
+						
+						<div class="step-box-button clearfix">
+							<span title="" onclick="openThickbox()" class="btn-primary btn">Mua ngay</span>
+	<!-- 						<a type="button" class="left add-to-cart-new colorbox-contact cboxElement" href="/index/cart?keepThis=true&TB_iframe=true&height=500&width=780"> </a> -->
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="span8">
+			<div class="item-select-box">
+				<div class="widget-title"><?php echo $row->name?></div>
+			</div>
+			<div class="item-select-box">
+				<p>Giá: <span rel="<?php echo $row->id?>" id="code" style="font-size: 15px; color: red; font-weight: bold;"><?php echo number_format($row->price, 0, ',', '.')?></span> vnđ</p>
+				<p><b><i>eDoctor giải pháp chăm sóc sức khoẻ từ xa lần đầu có tại Việt Nam.</i></b> <br/>
+				<b><i>eDoctor kết nối trực tiếp khách hàng với bác sĩ chuyên khoa là các giáo sư, tiến sĩ, thầy thuốc ưu tú đầu ngành tại Việt Nam,
+				góp phần nâng cao sức khoẻ cho cộng đồng.</i></b>
+				</p>
+				<p><i style="text-transform: uppercase;">Hướng dẫn kích hoạt thẻ</i></p>
+				<p><b>Cách 1: Thực hiện các bước</b><p>
+				<p>1. Gọi đến tổng đài 19006115</p>
+				<p>2. Chọn phím 2, chọn tiếp phím 1 để nhập số PIN</p>
+				<p>3. Nhập mã số PIN và kết thúc bằng phím #</p>
+				<p><b>Cách 2: Soạn tin nhắn theo cú pháp</b><p>
+				<p>Tự kích hoạt soạn tin: <b>EKH [dấu cách][mã số PIN] gửi 8009</b></p>
+				<p>Kích hoạt cho số điện thoại khác: <b>EKH [dấu cách][số điện thoại] [dấu cách][mã số PIN] gửi 8009</b></p>
+				<p>Phí gửi tin là 500 đồng</p>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+function openThickbox() {
+	var url = "/cart/show-cart?KeepThis=true&TB_iframe=true&width=780&height=480";
+	var qty 	= $('#qty').val();
+	var code 	= $('#code').attr('rel');
+	 $.ajax({
+        url: '/cart/new',
+		type: "POST",
+        data: {'qty': qty, 'code':code},
+        success:function(){
+        	tb_show("", url);
+		},
+    });
+}
+</script>

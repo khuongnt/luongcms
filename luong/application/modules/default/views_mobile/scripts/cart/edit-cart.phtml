@@ -1,0 +1,91 @@
+<?php $list = $this->list;
+$total = 0;
+?>
+<!-- ARTICLE -->
+<div id="cartOder" class="curvyRedraw">
+    <div id="widget">
+        <div class="widget-title-cart">Danh sách thẻ đã chọn</div>
+        <div id="shopping-cart-content" class="shopping-cart-content" style="width: 581px; margin: 0px">
+            <form action="" method="POST">
+                <div id="shopping-cart-header" style="padding: 10px 20px 0 20px;">
+                    <div style="clear: both"></div>
+                </div>
+                <div class="cart-info" style="padding: 0px">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td class="title_image"></td>
+                                <td class="title_name"></td>
+                                <td class="title_price">Đơn giá</td>
+                                <td class="title_quantity">Số Lượng</td>
+                                <td class="title_total">Tổng Cộng</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-cart">
+                            <?php
+                            if (!empty($list)):
+                                foreach ($list AS $item):
+                                    if (empty($_SESSION['cart'][$item->id])) {
+                                        continue;
+                                    }
+                                    $item_qty = doubleval($_SESSION['cart'][$item->id]);
+                                    $item_total = $item_qty * $item->price;
+                                    $total += $item_total;
+                                    ?>
+                                    <tr>
+                                        <td class="image">
+                                            <img width="91" height="58" class="clsImage" src="/layouts/default/img/the-mot-nam.png" alt="the cham soc suc khoe edoctor" title="">
+                                        </td>
+                                        <td class="name">
+                                            <span style="margin-left: 5px"><?php echo $item->name ?></span>
+                                        </td>
+                                        <td class="cart_price"><span style="color:#b12704!important" class="price_coupon"><?php echo number_format($item->price, 0, ',', '.'); ?> VNĐ</span><br></td>
+                                        <td class="quantity">
+                                            <input type="text" value="<?php echo $item_qty ?>" style="width:30px; text-align: center; padding: 0px" class="qty" name="product_<?php echo $item->id ?>"/>
+                                            <input type="image" src="/layouts/default/img/adept_update.png" alt="Submit" width="20" height="20" title="Cập nhập" style="top: -5px">
+                                        </td>
+                                        <td class="total"><span style="color:#b12704!important" id="product_6634"><strong><?php echo number_format($item_total, 0, ',', '.'); ?> VNĐ</strong></span></td>
+                                    </tr>
+                                    <?php
+                                endforeach;
+                            endif;
+                            ?>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div class="cart-total">
+                    <div class="cart-total-left"> 
+        <!--             	<span class="btn btn-primary reload">Cập nhập giỏ hàng</span> -->
+                        <!-- 		            	<button class="btn btn-primary">Cập nhập giỏ hàng</button> -->
+                    </div>
+                    <div class="sub_total">
+                        <span>Thành Tiền : </span><span style="color:#b12704!important" id="tongtien"><?php echo number_format($total, 0, ',', '.') ?></span><span style="color:#b12704!important"> VNĐ</span>
+                        <div class="checkout">
+                            <a href="javascript://" name="cart_checkout" title="" class="btn-cam" id="popupShowcart"><i class="fa fa-check-square-o fa-lg"></i> Tiến hành thanh toán</a></div> 
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+                <div class="smart-link">
+                    <a target="_blank" href="http://edoctor.vn/dich-vu-tu-van-cham-soc-suc-khoe.htm">Tư vấn sức khỏe</a> | 
+                    <a target="_blank" href="http://edoctor.vn/tra-cuu-benh.htm">Tra cứu bệnh</a> | 
+                    <a target="_blank" href="http://suckhoe.edoctor.vn/">Tin sức khỏe</a> | 
+                    <a target="_blank" href="http://edoctor.vn/cham-soc-suc-khoe-ba-bau.htm">Chăm sóc bà bầu</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END ARTICLE -->
+<!-- SIDEBAR --> 
+<div id="sidebar">
+    <?php
+    if (isset($_SESSION['info']['address'])) {
+        echo $this->render('info.phtml');
+    }
+    ?>
+<?php echo $this->render('giohang.phtml'); ?>
+</div>
+<!-- END SIDEBAR --> 
+<link rel="stylesheet" media="all" href="/layouts/default/css/vi_style_v3.css" type="text/css">

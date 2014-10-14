@@ -1,0 +1,86 @@
+<?php
+$errors = $this->errors;
+$list = $this->list;
+$listProvince = $this->listProvince;
+$listDistrict = $this->listDistrict;
+?>
+<form class="form-horizontal" action="" method="POST">
+    <div class="control-group">
+        <div class="controls">
+            <input type="text" id="fullname" placeholder="Họ và tên" name="fullname" value="<?php if ($this->fullname) echo $this->fullname ?>" class="span4">
+            <?php if (isset($errors->fullname_error)): ?>
+                <span class="help-block has-error"><?php echo $errors->fullname_error ?></span>
+            <?php endif; ?>
+        </div>
+    </div>
+    <br />
+    <div class="control-group">        
+        <div class="controls">
+            <input type="text" id="mobile" placeholder="Số điện thoại" name="mobile" value="<?php if ($this->mobile) echo $this->mobile ?>" class="span4">
+            <?php if (isset($errors->mobile_error)): ?>
+                <span class="help-block has-error"><?php echo $errors->mobile_error ?></span>
+            <?php endif; ?>
+        </div>
+    </div>
+    <br />
+    <div class="control-group">
+        <div class="controls">
+            <input type="text" id="mobile" placeholder="Địa chỉ email" name="email" value="<?php if ($this->email) echo $this->email ?>" class="span4">
+            <?php if (isset($errors->email_error)): ?>
+                <span class="help-block has-error"><?php echo $errors->email_error ?></span>
+            <?php endif; ?>
+        </div>
+    </div>
+    <br />
+    <div class="control-group">
+        <div class="controls">
+            <select name="province" class="span4" id="province">
+                <option value="0">Vui lòng chọn Tỉnh/Thành phố</option>
+                <?php foreach ($listProvince AS $item): ?>
+                    <option value="<?php echo $item->id ?>" <?php if ($this->province == $item->id) echo 'selected="selected"' ?>><?php echo $item->name ?></option>
+                <?php endforeach; ?>
+            </select>
+            <?php if (isset($errors->province_error)): ?>
+                <span class="help-block has-error"><?php echo $errors->province_error ?></span>
+            <?php endif; ?>
+        </div>
+    </div>
+    <br />
+    <div class="control-group">
+        <div class="controls" id="district">
+            <select name="district" class="span4">
+                <option value="0">Vui lòng chọn Quận/Huyện</option>
+                <?php if ($listDistrict): ?>
+                    <?php foreach ($listDistrict AS $item): ?>
+                        <option value="<?php echo $item->id ?>" <?php if ($this->district == $item->id) echo 'selected="selected"' ?>><?php echo $item->name ?></option>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </select>
+            <?php if (isset($errors->district_error)): ?>
+                <span class="help-block has-error"><?php echo $errors->district_error ?></span>
+            <?php endif; ?>
+        </div>
+    </div>
+    <br />
+    <div class="control-group">
+        <div class="controls">
+            <textarea placeholder="Địa chỉ giao thẻ" rows="" cols="" name="address" class="span4"><?php echo $this->address ?></textarea>
+            <?php if (isset($errors->address_error)): ?>
+                <span class="help-block has-error"><?php echo $errors->address_error ?></span>
+            <?php endif; ?>
+        </div>
+    </div>
+    <br />
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn-cam" id="step2"><i class="fa fa-check-square-o"></i> Xác nhận thông tin và tiếp tục thanh toán</button>
+        </div>
+    </div>
+</form>
+<br />
+<p style="border-top:1px solid #ddd; padding-top:10px;"><strong>Dùng thử dịch vụ trong 24h đầu</strong></p> 
+<br />
+<a class="m-btn" href="tel:18006115" title=""><i class="fa fa-phone"></i> 18006115 (miễn phí)</a>
+<p class="note">
+<strong>Hoàn trả 100%</strong> giá trị thẻ eDoctor trong 30 ngày đầu tiên nếu khách hàng không hài lòng và không muốn sử dụng dịch vụ của eDoctor.
+</p>

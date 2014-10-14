@@ -1,0 +1,97 @@
+<?php 
+$row = $this->row;
+$related = $this->related;
+///var_dump($row);
+?>
+<div id="banner-quyenloi">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="element_from_left"><?php echo $row->name; ?></h1>
+				<p>Địa chỉ: <?php echo $row->address; ?>. Điện thoại: <strong style="font-weight:400;"><?php echo $row->phone; ?></strong></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Home -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+					<h1>Thông tin về <?php echo $row->name; ?></h1>
+					<ul class="partner-info">
+						<li><label>Địa chỉ</label> <?php echo $row->address; ?>.</li>
+						<li><label>Điện thoại</label> <strong style="font-weight:400;"><?php echo $row->phone; ?></strong></li>
+						<li><label>Chiết khấu</label> <span><?php echo $row->saleoff; ?>%</span></li>
+					</ul>
+					<div class="list-services col-md-12">
+						<div class="row">
+							<?php if($row->services): ?>
+							<div class="col-md-6">
+								<div style="border-right:1px solid #cecece;" class="row">
+								<h2>Các dịch vụ của <?php echo $row->name; ?></h2>
+								<?php echo $row->services; ?>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<?php endif; ?>
+							<?php if($row->major): ?>
+							<div class="col-md-6">
+								<div class="row">
+								<h2>Các chuyên môn của <?php echo $row->name; ?></h2>
+								<?php echo $row->major; ?>
+								</div>
+							<div class="clear"></div>
+							</div>
+							<?php endif; ?>
+						</div>
+					</div>
+					<div class="the_content">
+						<?php echo $row->content; ?>
+					</div>
+			</div>
+			<div class="col-md-4">
+				<div style="margin-top:20px;" class="thumbs-up thumbs_side">
+					<p><i class="fa fa-hand-o-right"></i> <strong>Hoàn lại 100%</strong> giá trị thẻ nếu khách hàng không hài lòng và không muốn tiếp tục sử dụng dịch vụ của eDoctor trong 30 ngày đầu tiên. Hãy gọi ngay <strong>18006115</strong> để MIỄN PHÍ dùng thử dịch vụ tư vấn, chăm sóc sức khỏe của eDoctor trong 24h đầu.</p>
+					<p><i class="fa fa-hand-o-right"></i> <strong>365 ngày có bác sỹ tư vấn sức khỏe</strong></p>
+					<p><i class="fa fa-hand-o-right"></i> <strong>Thăm khám sức khỏe mỗi tháng 1 lần qua điện thoại</strong></p>
+					<p><i class="fa fa-hand-o-right"></i> <strong>Thăm khám sức khỏe tại nhà mỗi năm 2 lần</strong></p>
+					<div style="margin-top:10px;" class="muathe">
+						<a href="/dich-vu-tu-van-cham-soc-suc-khoe.htm" style="display:block; text-align:center; margin:0 auto;" class="buy_now btn-cam">
+						<i class="fa fa-shopping-cart"></i> Mua thẻ eDoctor
+						</a>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			<?php if($related): ?>
+			<div class="col-md-12">
+				<div class="related_partner">
+					<h2>Các đối tác khác</h2>
+					<?php foreach ($related as $post): ?>
+						<div class="item-partner col-md-3">
+							<a href="/doi-tac/<?php echo $post->alias; ?>.html" title="<?php echo $post->name; ?>"><img src="<?php echo $post->image; ?>" alt=""></a>
+							<h3><a href="/doi-tac/<?php echo $post->alias; ?>.html" title=""><?php echo $post->name; ?></a></h3>
+							<span><?php echo $post->address; ?></span>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+			<?php endif; ?>
+		</div>	
+	</div>
+	<!-- Home end -->
+	<!-- Purchase -->
+	<div class="purchase">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<p><i class="fa fa-hand-o-right"></i> Mua thẻ <a style="color:#FFF;" href="http://edoctor.vn/the-cham-soc-suc-khoe-edoctor.htm">chăm sóc sức khỏe</a> eDoctor ngay hôm này để được hưởng các chương trình ưu đãi<br />
+					<span>Chỉ cần gọi về Tổng đài 18006115 (miễn phí cước gọi) - hàng trăm bác sĩ là các Giáo sư, tiến sĩ… đang chờ điện thoại của bạn.</span></p>
+				</div>
+				<div class="col-md-3 purchase-button element_from_right">
+					<a href="http://edoctor.vn/onepage.htm" title="Thẻ chăm sóc sức khỏe eDoctor" class="btn btn-default btn-green">Mua online</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Purchase end -->

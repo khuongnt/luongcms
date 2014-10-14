@@ -1,0 +1,21 @@
+<div id="fullPage">
+    <div class="padding">
+        <p><strong>Bạn không có khả năng truy cập trang này vì:</strong></p>
+        <p>
+            <b>1. </b> Một mục đánh dấu, ưa thích quá cũ</br>
+            <b>2. </b> Một công cụ tìm kiếm đã quá cũ</br>
+            <b>3. </b> Gõ  sai địa chỉ</br>
+            <b>4. </b> Bạn không có quyền truy cập trang này.</br>
+            <b>5. </b> Trang không được tìm thấy.</br>
+            <b>6. </b> Một lỗi xảy ra khi thực hiện yêu cầu của bạn.</br>
+        </p>
+        <p><strong>Xin vui lòng quay lại trang sau:</strong></p>
+        <ul>
+            <li><a href="/" class="help">Trang chủ</a></li>
+        </ul>
+    </div>
+    <?php if (isset($this->exception)): ?>
+        <pre><?php echo $this->exception; ?></pre>
+    <?php endif; ?>
+</div>
+

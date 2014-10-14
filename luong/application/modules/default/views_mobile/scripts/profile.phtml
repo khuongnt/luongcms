@@ -1,0 +1,27 @@
+<?php $user = $this->user ?>
+<h4 class="widget-title"><i class="fa fa-info-circle fa-lg"></i> Thông tin tài khoản</h4>
+<div>
+    <div>
+        Tài khoản: <span style="color: #000; font-weight: bold;"><?php echo $user->email ?></span>
+    </div>
+    <div>
+        Số điện thoại: <span style="color: #000; font-weight: bold;"><?php echo $user->phoneNumber ?></span>
+    </div>
+    <div class="smart-link-update-info full">
+        <div>
+            <a class="btn-flat" href="/thong-tin-nguoi-dung.htm"><i class="fa fa-user"></i> Thông tin tài khoản</a>
+        </div>
+        <div>
+            <a class="btn-flat" href="/lich-su-cuoc-goi.htm"><i class="fa fa-phone-square"></i> Lịch sử cuộc gọi</a>
+        </div>
+        <div>
+            <a class="btn-flat" href="/danh-sach-don-hang.htm"><i class="fa fa-shopping-cart"></i> Lịch sử mua hàng</a>
+        </div>
+        <div>
+            <a class="btn-flat" href="/thay-doi-mat-khau.htm"><i class="fa fa-key"></i> Thay đổi mật khẩu</a>
+        </div>
+        <div>
+            <a class="btn-flat" href="/member/logout"><i class="fa fa-sign-out"></i> Đăng xuất</a>
+        </div>
+    </div>
+</div>

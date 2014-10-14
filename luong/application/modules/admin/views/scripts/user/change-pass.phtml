@@ -1,0 +1,52 @@
+<?php if ($this->success) : ?>
+    <div class="alert alert-success fade in">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <strong>Well done! </strong> <?php echo $this->success ?>.
+    </div>
+<?php endif; ?>
+<?php if ($this->errors) : ?>
+    <div class="alert alert-error fade in">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <?php echo $this->errors ?>
+    </div>
+<?php endif; ?>
+<div class="row">
+    <div class="span12">
+        <div class="widget-block">
+            <div class="widget-head">
+                <h5> Form ELements</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    <form class="form-horizontal well white-box" method="post" action="" enctype="multipart/form-data">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label">Old Password</label>
+                                <div class="controls">
+                                    <input type="password" class="span4" name="old_password" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">New Password</label>
+                                <div class="controls">
+                                    <input type="password" class="span4" name="new_password"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Confirm Password</label>
+                                <div class="controls">
+                                    <input type="password" class="span4" name="cf_password"/>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <a class="btn" href="<?php echo $this->contextPath; ?>">Cancel</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

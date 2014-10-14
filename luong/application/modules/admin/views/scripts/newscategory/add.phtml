@@ -1,0 +1,45 @@
+<?php $row = $this->row; ?>
+<div class="row">
+    <div class="span12">
+        <div class="widget-block">
+            <div class="widget-head">
+                <h5> Form ELements</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    <form class="form-horizontal well white-box" method="post" action="" enctype="multipart/form-data">
+                        <?php if(isset($this->error)){
+                            echo '<p class="alert alert-danger"><strong>'.$this->error.'</strong></p>';
+                        } elseif(isset($_GET['update'])) {
+                            echo '<p class="alert alert-success"><strong>Thêm danh mục thành công!</strong></p>';
+                        }  ?>
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label">Name</label>
+                                <div class="controls">
+                                    <input type="text" class="span4" name="name" value=""/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Đường dẫn</label>
+                                <div class="controls">
+                                    <input type="text" class="span4" name="slug" value=""/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Thứ tự</label>
+                                <div class="controls">
+                                    <input type="text" class="span4" name="order" value=""/>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Thêm danh mục</button>
+                                <a class="btn" href="<?php echo $this->contextPath; ?>">Huỷ bỏ</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+    <head>
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0"> -->
+        <?php
+        $configSite = $this->configSite;
+        $titlePage = $this->titlePage;
+        $keywords = $this->keywords;
+        $description = $this->description;
+        $parent = $this->parent;
+        $module = $this->module;
+        $controller = $this->controller;
+        $action = $this->action;
+        $user = $this->user;
+        ?>
+        <title><?php echo empty($titlePage) ? $configSite->site_name : $titlePage; ?></title>
+        <meta name="format-detection" content="telephone=yes" /> 
+        <meta content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta http-equiv="cleartype" content="on" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="<?php echo empty($description) ? $configSite->description : $description; ?>"/>
+        <meta name="keywords" content="<?php echo empty($keywords) ? $configSite->keywords : $keywords; ?>"/>
+        <meta name="Author" content="" />
+        <meta name="Robots" content="index,follow,noodp" />
+        <?php if ($action == 'index') : ?>
+            <!-- SEO by khuongnt -->
+            <link rel="canonical" href="http://edoctor.vn/" />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content="eDoctor - Tư vấn chăm sóc sức khỏe 247" />
+            <meta property="og:description" content="<?php echo empty($description) ? $configSite->description : $description; ?>" />
+            <meta property="og:url" content="http://edoctor.vn/" />
+            <meta property="og:site_name" content="Tư vấn chăm sóc sức khỏe, Cham soc suc khoe, Dich vu cham soc suc khoe" />
+            <meta name="twitter:card" content="summary" />
+            <!-- /SEO by khuongnt-->
+            <meta name="google-site-verification" content="hKEXCBSyKJa_zvTYm8jNDaU5-mww-EcZlvggKUg_Vv4" />
+        <?php endif; ?>
+        <link rel="shortcut icon" href="http://edoctor.vn/layouts/mobile/img/ico.png" />
+        <link rel="apple-touch-icon" href="http://edoctor.vn/layouts/mobile/img/ico.png"/>
+        <link rel="icon" href="http://edoctor.vn/layouts/mobile/img/ico.png"/>
+        <link rel="stylesheet" media="all" href="/layouts/mobile/css/style.css" type="text/css">
+        <link rel="stylesheet" media="all" href="/layouts/mobile/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="/layouts/mobile/css/jquery.bxslider.css">
+        <script src="/layouts/mobile/js/jquery.js"></script>
+        <?php echo $configSite->ga ?>
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-50408640-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!--facebook remaketing-->
+        <script>(function() {
+          var _fbq = window._fbq || (window._fbq = []);
+          if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = '//connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+          }
+          _fbq.push(['addPixelId', '676249629117674']);
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', 'PixelInitialized', {}]);
+        </script>
+        <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=676249629117674&amp;ev=NoScript" /></noscript>
+        <!--facebook remaketing-->
+        <!-- Google Code for Remarketing Tag -->
+        <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 1015824921;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+        </script>
+        <noscript>
+        <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1015824921/?value=0&amp;guid=ON&amp;script=0"/>
+        </div>
+        </noscript>
+        <!-- Google Code for Remarketing Tag -->
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="full" id="header">
+                <div class="padding">
+                    <h1 id="brand">
+                        <a title="Dịch vụ tư vấn chăm sóc sức khỏe eDoctor" href="/">
+                            <img src="/layouts/mobile/img/logo.png" alt="">
+                        </a>
+                    </h1>
+                    <div class="menu-main">
+                        <a id="menu-control" href="#site-nav" title=""><i class="fa fa-bars"></i></a>
+                        <div class="clear"></div>
+                        <?php echo $configSite->header ?> 
+                    </div>
+                </div>
+            </div>
+            <?php if ($action == 'index' && $controller == 'index') : ?>
+                <!-- BANNER -->
+                <div class="full" id="slide-home">
+                    <ul class="bxslider">
+                        <li>                
+                            <div class="inner">
+                                <a href="/dich-vu-tu-van-cham-soc-suc-khoe.htm" title="">
+                                    <img class="movie-pic" src="/upload/images/tu-van-cham-soc-suc-khoe-edoctor.jpg">
+                                </a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </li>    
+                        <li>
+                            <div class="inner">
+                                <a href="/bac-sy-edoctor.htm" title="">
+                                    <img class="movie-pic" src="/upload/images/doi-ngu-bac-si-tu-van-cham-soc-suc-khoe-chuyen-nghiep.jpg">
+                                </a>    
+                                <div class="clearfix"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="inner">
+                                <a href="/loi-ich-cua-khach-hang.htm" title="">
+                                    <img class="movie-pic" src="/upload/images/dich-vu-tu-van-cham-soc-suc-khoe.jpg">
+                                </a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ! end slider -->
+
+                <!-- MAIN -->
+                <div class="full" id="home-buckets">
+                    <?php echo $this->layout()->content ?>
+                </div>
+                <!-- END MAIN -->
+                <?php else: ?>
+                <!-- MAIN -->
+                <div id="main" class="full">
+                    <div class="padding">
+                        <?php echo $this->layout()->content ?>
+                    </div>
+                </div>
+                <!-- END MAIN -->
+            <?php endif; ?>	
+            <!-- FOOTER -->
+            <div class="full" id="footer">
+                <ul class="menu inner">
+                  <li class="menu-item"><h3>Về eDoctor</h3>
+                    <ul class="sub-menu">
+                        <li class="menu-item"><h4><a href="/dich-vu-tu-van-cham-soc-suc-khoe.htm">Thẻ eDoctor</a></h4></li>
+                        <li class="menu-item"><h4><a href="/bac-si-edoctor.htm">Bác sĩ của eDoctor</a></h4></li>
+                        <li class="menu-item"><h4><a href="/gui-cau-hoi.html">Hỏi đáp sức khoẻ</a></h4></li>
+                        <li class="menu-item"><h4><a href="/tra-cuu-benh.htm">Tra cứu bệnh</a></h4></li>
+                        <li class="menu-item"><h4><a href="/tra-cuu-thuoc.htm">Tra cứu thuốc</a></h4></li>
+                        <li class="menu-item"><h4><a href="/lien-he.htm">Liên hệ với eDoctor</a></h4></li>
+                        <li class="menu-item"><h4><a href="/khach-hang-doanh-nghiep.htm">Khách hàng doanh nghiệp</a></h4></li>
+                        <li class="menu-item"><h4><a href="/quyen-loi.htm">Quyền lợi khách hàng</a></h4></li>
+                    </ul>
+                  </li>
+                </ul>
+                <div id="sub-footer">
+                    <div class="inner">
+                        <div class="copyright">
+                            <i class="fa fa-phone"></i> Đặt mua thẻ eDoctor trực tuyến.
+                            <div class="clear"></div>
+                            <a style="margin-bottom:10px;" class="m-btn" href="/mua-the.html" title=""><i class="fa fa-check"></i> Mua thẻ eDoctor</a>
+                            <div class="clear"></div>
+                            <i class="fa fa-phone"></i> Gọi bác sỹ tư vấn sức khỏe: <strong>18006115</strong>.
+                            <div class="clear"></div>
+                            <a class="m-btn" href="tel:18006115" title=""><i class="fa fa-phone"></i> 18006115</a>
+                            <div class="clear"></div>
+                            <p style="margin-top:10px; padding-top:10px; border-top:1px solid #444;"><strong>Công ty cổ phần eDoctor</strong></p>
+                            <i class="fa fa-map-marker"></i> Địa chỉ:  Số 23, ngách 37/2, phố Dịch Vọng, Cầu Giấy, Hà Nội. <br/>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="totop"><a href="#header" title=""><i class="fa fa-chevron-up"></i></a></div>
+        </div>
+        <script src="/layouts/mobile/js/common.js"></script>
+        <script src="/layouts/mobile/js/thickbox.js"></script>
+        <script src="/layouts/mobile/js/jquery.bxslider.min.js"></script>
+        <?php 
+            $url_original = $_SERVER['REQUEST_URI']; 
+            $url_original = Luong_Helper_Utils::remove_querystring_var($url_original,'ref');
+        ?>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('a').attr('href', function(i, h) {
+                    if (typeof h != 'undefined' && h.indexOf('.htm') != -1) {
+                    return h + (h.indexOf('?') != -1 ? "&ref=<?php echo base64_encode($url_original); ?>" : "?ref=<?php echo base64_encode($url_original); ?>");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
